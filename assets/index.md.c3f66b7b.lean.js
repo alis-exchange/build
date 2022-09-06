@@ -1,1 +1,0 @@
-import{_ as e,c as s,o as t,a}from"./app.a9b32557.js";const o="/docs/assets/logo.a1361228.svg";const v=JSON.parse('{"title":"","description":"","frontmatter":{"layout":"home"},"headers":[],"relativePath":"index.md"}'),_={name:"index.md"},c=a("",1),i=[c];function n(r,d,l,m,p,h){return t(),s("div",null,i)}const f=e(_,[["render",n]]);export{v as __pageData,f as default};
