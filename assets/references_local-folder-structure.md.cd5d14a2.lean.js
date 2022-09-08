@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,a as r}from"./app.f83852f9.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"references/local-folder-structure.md"}'),c={name:"references/local-folder-structure.md"},s=r("",1),d=[s];function i(a,n,l,h,u,p){return o(),t("div",null,d)}const _=e(c,[["render",i]]);export{f as __pageData,_ as default};
