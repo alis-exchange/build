@@ -1,101 +1,101 @@
-import{_ as n,o as s,c as a,a as t}from"./app.acf76c56.js";const m=JSON.parse('{"title":"Make a request to a product in your local environment","description":"","frontmatter":{"title":"Make a request to a product in your local environment","sidebarDepth":0},"headers":[{"level":2,"title":"Book repository example","slug":"book-repository-example","link":"#book-repository-example","children":[]},{"level":2,"title":"1. Establish the client connection","slug":"_1-establish-the-client-connection","link":"#_1-establish-the-client-connection","children":[]},{"level":2,"title":"2. Make a request","slug":"_2-make-a-request","link":"#_2-make-a-request","children":[{"level":3,"title":"Full code example","slug":"full-code-example","link":"#full-code-example","children":[]}]},{"level":2,"title":"Get a feel for the alis.exchange experience","slug":"get-a-feel-for-the-alis-exchange-experience","link":"#get-a-feel-for-the-alis-exchange-experience","children":[]}],"relativePath":"guides/how-to-guides/make-your-first-request.md"}'),o={name:"guides/how-to-guides/make-your-first-request.md"},e=t(`<h1 id="make-a-request-to-a-product-in-your-local-environment" tabindex="-1">Make a request to a product in your local environment <a class="header-anchor" href="#make-a-request-to-a-product-in-your-local-environment" aria-hidden="true">#</a></h1><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>We are in the process of building out new examples and moving over the existing demo services. The examples below may therefore result in errors when making requests.</p></div><blockquote><p>\u{1F6A9} This section is supplementary to the <a href="./../getting-started/consumer-experience.html">consumer experience</a>. We recommend completing it before attempting this section.</p></blockquote><p>Given the underlying technologies used, the platform provides the ability to generate client libraries for various supported programing languages. For users of the product, it allows you to programmatically access products natively in your code without having to wrangle obscure, unpredictable data objects (see the <a href="./../getting-started/consumer-experience.html">consumer experience</a>).</p><p>Irrespective of the language, this is done in two steps:</p><ol><li>Establishing a client connection with the server.</li><li>Using the connection to make a request.</li></ol><p>Following the same Book example as the quickstart, this guide will step you through making requests in your own developer environment.</p><blockquote><p>We currently only provide the guide for Go. Want to help us expand this to other languages? <a href="https://github.com/alis-x/docs/edit/main/docs/guides/how-to-guides/make-your-first-request.md" target="_blank" rel="noreferrer">Make a contribution</a>.</p></blockquote><h2 id="book-repository-example" tabindex="-1">Book repository example <a class="header-anchor" href="#book-repository-example" aria-hidden="true">#</a></h2><p>Play is an organisation that builds products on <strong>alis.exchange</strong>. Their flagship book repository product,<code>ME</code>, provides details on digital books which they have available. The product defines a <code>book</code> resource as follows and has a <code>BookService</code> with two primary client facing methods that allows clients to list all available books and to get details on a specific book.</p><p>The full <code>Books.proto</code> file is shown for reference purposes.</p><div class="language-"><button class="copy"></button><span class="lang"></span><pre><code>syntax = &quot;proto3&quot;;
+import{_ as n,o as s,c as a,a as t}from"./app.acf76c56.js";const g=JSON.parse('{"title":"Make a request to a product in your local environment","description":"","frontmatter":{"title":"Make a request to a product in your local environment","sidebarDepth":0},"headers":[{"level":2,"title":"Book repository example","slug":"book-repository-example","link":"#book-repository-example","children":[]},{"level":2,"title":"1. Establish the client connection","slug":"_1-establish-the-client-connection","link":"#_1-establish-the-client-connection","children":[]},{"level":2,"title":"2. Make a request","slug":"_2-make-a-request","link":"#_2-make-a-request","children":[{"level":3,"title":"Full code example","slug":"full-code-example","link":"#full-code-example","children":[]}]},{"level":2,"title":"Get a feel for the alis.exchange experience","slug":"get-a-feel-for-the-alis-exchange-experience","link":"#get-a-feel-for-the-alis-exchange-experience","children":[]}],"relativePath":"guides/how-to-guides/make-your-first-request.md"}'),o={name:"guides/how-to-guides/make-your-first-request.md"},p=t(`<h1 id="make-a-request-to-a-product-in-your-local-environment" tabindex="-1">Make a request to a product in your local environment <a class="header-anchor" href="#make-a-request-to-a-product-in-your-local-environment" aria-hidden="true">#</a></h1><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>We are in the process of building out new examples and moving over the existing demo services. The examples below may therefore result in errors when making requests.</p></div><blockquote><p>\u{1F6A9} This section is supplementary to the <a href="./../getting-started/consumer-experience.html">consumer experience</a>. We recommend completing it before attempting this section.</p></blockquote><p>Given the underlying technologies used, the platform provides the ability to generate client libraries for various supported programing languages. For users of the product, it allows you to programmatically access products natively in your code without having to wrangle obscure, unpredictable data objects (see the <a href="./../getting-started/consumer-experience.html">consumer experience</a>).</p><p>Irrespective of the language, this is done in two steps:</p><ol><li>Establishing a client connection with the server.</li><li>Using the connection to make a request.</li></ol><p>Following the same Book example as the quickstart, this guide will step you through making requests in your own developer environment.</p><blockquote><p>We currently only provide the guide for Go. Want to help us expand this to other languages? <a href="https://github.com/alis-x/docs/edit/main/docs/guides/how-to-guides/make-your-first-request.md" target="_blank" rel="noreferrer">Make a contribution</a>.</p></blockquote><h2 id="book-repository-example" tabindex="-1">Book repository example <a class="header-anchor" href="#book-repository-example" aria-hidden="true">#</a></h2><p>Play is an organisation that builds products on <strong>alis.exchange</strong>. Their flagship book repository product,<code>ME</code>, provides details on digital books which they have available. The product defines a <code>book</code> resource as follows and has a <code>BookService</code> with two primary client facing methods that allows clients to list all available books and to get details on a specific book.</p><p>The full <code>Books.proto</code> file is shown for reference purposes.</p><div class="language-protobuf"><button class="copy"></button><span class="lang">protobuf</span><pre><code><span class="token keyword">syntax</span> <span class="token operator">=</span> <span class="token string">&quot;proto3&quot;</span><span class="token punctuation">;</span>
 
-package play.me.resources.books.v1;
+<span class="token keyword">package</span> play<span class="token punctuation">.</span>me<span class="token punctuation">.</span>resources<span class="token punctuation">.</span>books<span class="token punctuation">.</span>v1<span class="token punctuation">;</span>
 
-import &quot;google/protobuf/empty.proto&quot;;
-import &quot;google/api/resource.proto&quot;;
-import &quot;google/api/field_behavior.proto&quot;;
-import &quot;google/api/client.proto&quot;;
-import &quot;google/api/annotations.proto&quot;;
-import &quot;google/protobuf/timestamp.proto&quot;;
-import &quot;google/protobuf/field_mask.proto&quot;;
-import &quot;google/type/date.proto&quot;;
+<span class="token keyword">import</span> <span class="token string">&quot;google/protobuf/empty.proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;google/api/resource.proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;google/api/field_behavior.proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;google/api/client.proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;google/api/annotations.proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;google/protobuf/timestamp.proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;google/protobuf/field_mask.proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;google/type/date.proto&quot;</span><span class="token punctuation">;</span>
 
-option go_package = &quot;go.protobuf.play.alis.exchange/play/me/resources/books/v1&quot;;
-// Book service for play.me.
-// Book service for play.me.
-service BooksService {
-     // Create a book.
-     rpc CreateBook(CreateBookRequest) returns (Book) {
-     	option (google.api.http) = {
-     		post: &quot;/resources/store/v1/books&quot;
-     		body: &quot;book&quot;
-     	};
-     	option (google.api.method_signature) = &quot;book&quot;;
-     }
-    // Get a book.
-    rpc GetBook(GetBookRequest) returns (Book) {
-        option (google.api.http) = {
-            get: &quot;/resources/store/v1/{name=books/*}&quot;
-        };
-        option (google.api.method_signature) = &quot;name&quot;;
-    }
-     // Delete a book.
-     rpc DeleteBook(DeleteBookRequest) returns (google.protobuf.Empty) {
-     	option (google.api.http) = {
-     		delete: &quot;/resources/store/v1/{name=books/*}&quot;
-     	};
-     	option (google.api.method_signature) = &quot;name&quot;;
-     }
-    // List books.
-    // Features are listed in Descending order.
-    rpc ListBooks(ListBooksRequest) returns (ListBooksResponse) {
-        option (google.api.http) = {
-            get: &quot;/resources/store/v1/books&quot;
-        };
-    }
-}
+<span class="token keyword">option</span> go_package <span class="token operator">=</span> <span class="token string">&quot;go.protobuf.play.alis.exchange/play/me/resources/books/v1&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// Book service for play.me.</span>
+<span class="token comment">// Book service for play.me.</span>
+<span class="token keyword">service</span> <span class="token class-name">BooksService</span> <span class="token punctuation">{</span>
+     <span class="token comment">// Create a book.</span>
+     <span class="token keyword">rpc</span> <span class="token function">CreateBook</span><span class="token punctuation">(</span><span class="token class-name">CreateBookRequest</span><span class="token punctuation">)</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token class-name">Book</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     	<span class="token keyword">option</span> <span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>http<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+     		post<span class="token punctuation">:</span> <span class="token string">&quot;/resources/store/v1/books&quot;</span>
+     		body<span class="token punctuation">:</span> <span class="token string">&quot;book&quot;</span>
+     	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+     	<span class="token keyword">option</span> <span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>method_signature<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">&quot;book&quot;</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+    <span class="token comment">// Get a book.</span>
+    <span class="token keyword">rpc</span> <span class="token function">GetBook</span><span class="token punctuation">(</span><span class="token class-name">GetBookRequest</span><span class="token punctuation">)</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token class-name">Book</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">option</span> <span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>http<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+            get<span class="token punctuation">:</span> <span class="token string">&quot;/resources/store/v1/{name=books/*}&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">option</span> <span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>method_signature<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     <span class="token comment">// Delete a book.</span>
+     <span class="token keyword">rpc</span> <span class="token function">DeleteBook</span><span class="token punctuation">(</span><span class="token class-name">DeleteBookRequest</span><span class="token punctuation">)</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token class-name">google.protobuf.Empty</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     	<span class="token keyword">option</span> <span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>http<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+     		delete<span class="token punctuation">:</span> <span class="token string">&quot;/resources/store/v1/{name=books/*}&quot;</span>
+     	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+     	<span class="token keyword">option</span> <span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>method_signature<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+    <span class="token comment">// List books.</span>
+    <span class="token comment">// Features are listed in Descending order.</span>
+    <span class="token keyword">rpc</span> <span class="token function">ListBooks</span><span class="token punctuation">(</span><span class="token class-name">ListBooksRequest</span><span class="token punctuation">)</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token class-name">ListBooksResponse</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">option</span> <span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>http<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+            get<span class="token punctuation">:</span> <span class="token string">&quot;/resources/store/v1/books&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// The definition of a book resource.
-message Book {
+<span class="token comment">// The definition of a book resource.</span>
+<span class="token keyword">message</span> <span class="token class-name">Book</span> <span class="token punctuation">{</span>
 
-	// The name of the book.
-	// Format: books/{book}.
-	string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+	<span class="token comment">// The name of the book.</span>
+	<span class="token comment">// Format: books/{book}.</span>
+	<span class="token builtin">string</span> name <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> OUTPUT_ONLY<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-	// The display name of the book.
-	string display_name = 2 [(google.api.field_behavior) = REQUIRED];
+	<span class="token comment">// The display name of the book.</span>
+	<span class="token builtin">string</span> display_name <span class="token operator">=</span> <span class="token number">2</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> REQUIRED<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-	// The authors of the book.
-	repeated string authors = 3 [(google.api.field_behavior) = REQUIRED];
+	<span class="token comment">// The authors of the book.</span>
+	<span class="token keyword">repeated</span> <span class="token builtin">string</span> authors <span class="token operator">=</span> <span class="token number">3</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> REQUIRED<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-	// The publisher of the book
-	string publisher = 4 [(google.api.field_behavior) = REQUIRED];
-}
+	<span class="token comment">// The publisher of the book</span>
+	<span class="token builtin">string</span> publisher <span class="token operator">=</span> <span class="token number">4</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> REQUIRED<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// Request message for [play.me.resources.books.v1.BooksService.CreateBook].
-message CreateBookRequest {
-	// The book to create
-	Book book = 1 [(google.api.field_behavior) = REQUIRED];
-}
+<span class="token comment">// Request message for [play.me.resources.books.v1.BooksService.CreateBook].</span>
+<span class="token keyword">message</span> <span class="token class-name">CreateBookRequest</span> <span class="token punctuation">{</span>
+	<span class="token comment">// The book to create</span>
+	<span class="token positional-class-name class-name">Book</span> book <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> REQUIRED<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// Request message for [play.me.resources.books.v1.BooksService.GetBook].
-message GetBookRequest {
-	// The book name is the unique identifier across organisations.
-	// Format: books/{book}
-	string name = 1 [(google.api.field_behavior) = REQUIRED];
-}
+<span class="token comment">// Request message for [play.me.resources.books.v1.BooksService.GetBook].</span>
+<span class="token keyword">message</span> <span class="token class-name">GetBookRequest</span> <span class="token punctuation">{</span>
+	<span class="token comment">// The book name is the unique identifier across organisations.</span>
+	<span class="token comment">// Format: books/{book}</span>
+	<span class="token builtin">string</span> name <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> REQUIRED<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// Request message for [play.me.resources.books.v1.BooksService.ListBooks].
-message ListBooksRequest {
-	// The maximum number of books to return. The service may return fewer than
-	// this value.
-	// If unspecified, at most 100 books will be returned.
-	// The maximum value is 1000; values above 1000 will be coerced to 1000.
-	int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
-}
+<span class="token comment">// Request message for [play.me.resources.books.v1.BooksService.ListBooks].</span>
+<span class="token keyword">message</span> <span class="token class-name">ListBooksRequest</span> <span class="token punctuation">{</span>
+	<span class="token comment">// The maximum number of books to return. The service may return fewer than</span>
+	<span class="token comment">// this value.</span>
+	<span class="token comment">// If unspecified, at most 100 books will be returned.</span>
+	<span class="token comment">// The maximum value is 1000; values above 1000 will be coerced to 1000.</span>
+	<span class="token builtin">int32</span> page_size <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> OPTIONAL<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// Request message for [play.me.resources.books.v1.BooksService.DeleteBook].
-message DeleteBookRequest {
-	// The resource name of the Book.
-	// Format: books/{book}.
-	string name = 1 [(google.api.field_behavior) = REQUIRED];
-}
+<span class="token comment">// Request message for [play.me.resources.books.v1.BooksService.DeleteBook].</span>
+<span class="token keyword">message</span> <span class="token class-name">DeleteBookRequest</span> <span class="token punctuation">{</span>
+	<span class="token comment">// The resource name of the Book.</span>
+	<span class="token comment">// Format: books/{book}.</span>
+	<span class="token builtin">string</span> name <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> REQUIRED<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-message ListBooksResponse {
-	// The books
-	repeated Book books = 1 [(google.api.field_behavior) = REQUIRED];
-}
+<span class="token keyword">message</span> <span class="token class-name">ListBooksResponse</span> <span class="token punctuation">{</span>
+	<span class="token comment">// The books</span>
+	<span class="token keyword">repeated</span> <span class="token positional-class-name class-name">Book</span> books <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>google<span class="token punctuation">.</span>api<span class="token punctuation">.</span>field_behavior<span class="token punctuation">)</span> <span class="token operator">=</span> REQUIRED<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre></div><p>We will be making requests to both the <code>ListBooks</code> and <code>GetBook</code> method by following the two steps provided in the introduction section.</p><h2 id="_1-establish-the-client-connection" tabindex="-1">1. Establish the client connection <a class="header-anchor" href="#_1-establish-the-client-connection" aria-hidden="true">#</a></h2><p>Prior to making the requests, a client connection needs to be established to the server.</p><p>The <code>NewConn</code> function is generated by the alis.exchange CLI when a new neuron is created. This is typically placed in a separate <code>Conn.go</code> file but is included as function in this example.</p><p>The <code>NewConn</code> function requires the specification of a host URL which can be obtained by:</p><ol><li>Navigating to the specific Cloud Run instance in the GCP Console.</li><li>Obtaining the URL from the product owner.</li></ol><div class="language-go"><button class="copy"></button><span class="lang">go</span><pre><code><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -344,4 +344,4 @@ message ListBooksResponse {
 
 	<span class="token keyword">return</span> grpc<span class="token punctuation">.</span><span class="token function">Dial</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> opts<span class="token operator">...</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
-</code></pre></div></details><h2 id="get-a-feel-for-the-alis-exchange-experience" tabindex="-1">Get a feel for the <strong>alis.exchange</strong> experience <a class="header-anchor" href="#get-a-feel-for-the-alis-exchange-experience" aria-hidden="true">#</a></h2><p>Try your hands creating your own function and incorporating a request to the <code>BooksClient</code>. Some suggestions of things to try:</p><ul><li>Loop through all the books and print out the author.</li><li>Get a book and wrangle the response to be printed out in a sentence structure.</li><li>Use the response of <code>ListBooks</code> to make multiple <code>GetBook</code> requests.</li></ul>`,36),p=[e];function c(l,u,i,r,k,g){return s(),a("div",null,p)}const h=n(o,[["render",c]]);export{m as __pageData,h as default};
+</code></pre></div></details><h2 id="get-a-feel-for-the-alis-exchange-experience" tabindex="-1">Get a feel for the <strong>alis.exchange</strong> experience <a class="header-anchor" href="#get-a-feel-for-the-alis-exchange-experience" aria-hidden="true">#</a></h2><p>Try your hands creating your own function and incorporating a request to the <code>BooksClient</code>. Some suggestions of things to try:</p><ul><li>Loop through all the books and print out the author.</li><li>Get a book and wrangle the response to be printed out in a sentence structure.</li><li>Use the response of <code>ListBooks</code> to make multiple <code>GetBook</code> requests.</li></ul>`,36),e=[p];function c(u,l,i,k,r,d){return s(),a("div",null,e)}const h=n(o,[["render",c]]);export{g as __pageData,h as default};
