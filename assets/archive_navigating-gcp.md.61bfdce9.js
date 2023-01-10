@@ -1,1 +1,0 @@
-import{_ as a,o as e,c as t}from"./app.a788c755.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"archive/navigating-gcp.md"}'),n={name:"archive/navigating-gcp.md"};function c(r,i,o,s,p,_){return e(),t("div")}const m=a(n,[["render",c]]);export{g as __pageData,m as default};
