@@ -1,6 +1,7 @@
 ---
 title: Alis Build Community Forum Preferences
 ---
+# Alis Build Community Forum Preferences
 
 The purpose of this page is to give guidance in using the Alis Build Community Forum.
 
