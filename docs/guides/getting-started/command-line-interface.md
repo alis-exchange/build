@@ -43,7 +43,7 @@ Not sure what your OS or ARCH is? Run `uname -a` to find out.
 ### List of available CLI binaries
 
 | macOS        | Linux  |
-   | ------ | -----|
+| ------ | -----|
 |   | [Linux Arm](https://files.cli.alis.services/linux/arm/latest/alis) |
 | [Darwin Arm64 (M1)](https://files.cli.alis.services/darwin/arm64/latest/alis) | [Linux Arm64](https://files.cli.alis.services/linux/arm64/latest/alis) |
 | [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/amd64/latest/alis) |
@@ -72,11 +72,11 @@ You have successfully installed the **alis.exchange** CLI!
 ```bash
 mkdir %HOMEPATH%\alis.exchange\cli
 ```
-   
+
 ::: warning
 If your `HOMEPATH` contains a space, you might need to manually create both a `alis.exchange` directory, as well as a `cli` directory therein.
 :::
-   
+
 3. Add this folder to your `$PATH`:
 
 ```bash
