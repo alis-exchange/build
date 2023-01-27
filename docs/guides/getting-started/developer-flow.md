@@ -121,7 +121,7 @@ The deployment of the neuron applies the infrastructure specification to a speci
 - A [PubSub](https://cloud.google.com/pubsub) topic to which messages are published when certain resources are interacted with.
 
 #### 👨‍💻 User actions
-Simply run the `alis neuron release` command from the terminal and follow the prompts.
+Simply run the `alis neuron deploy` command from the terminal and follow the prompts.
 
 #### 🏗 Alis Build
 Using the tag that was added when releasing the neuron, the infrastructure specification is applied in the deployment environment specified.
