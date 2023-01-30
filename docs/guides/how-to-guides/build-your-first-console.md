@@ -5,7 +5,12 @@ title: Build your first console
 
 # Build your first console
 
-This how-to-guide will take you through the steps of defining a resource service all the way through to consuming the service on a frontend application. 
+This how-to-guide will take you through the steps of defining a resource service all the way through to consuming the service on a frontend application.
+
+:::warning
+All the CLI commands referenced on this page requires [Alis Build Enterprise](https://alisx.com/#:~:text=Enterprise), which gives the simple process
+of define, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
+:::
 
 ## Prerequisites
 To get started with this guide, there are a few things you need to have done as an Alis Builder:
@@ -15,14 +20,14 @@ To get started with this guide, there are a few things you need to have done as 
 3. Ensure you have been added to the relevant organisation's developers group. Request to be added by the owner of the
 organisation.
 
-::: info 
+::: info
 You can list all available organisations and their owners by running `alis org list`
 :::
 
 # Conceptual Overview
 
 A console in the Alis Build ecosystem is a web application which leverages a backend-for-frontend pattern to provide the
-means to consume multiple products within one interface. Since consoles follow a resource oriented design principals, similar to 
+means to consume multiple products within one interface. Since consoles follow a resource oriented design principals, similar to
 a Alis Build product, it ensures end-to-end type safety with type definitions flowing through from the backend to the frontend.
 The conceptual overview of the pattern is depicted in the image below.
 
@@ -30,24 +35,24 @@ The conceptual overview of the pattern is depicted in the image below.
 <img src='./img/build-your-first-console-pattern-concept.png' style=''>
 </div>
 
-A resource server is responsible for all resource management services. A console server is responsible for managing 
-communication with all resources servers as well as hosting the frontend application. Communication between resource 
+A resource server is responsible for all resource management services. A console server is responsible for managing
+communication with all resources servers as well as hosting the frontend application. Communication between resource
 and console servers take place through gRPC and the console server and the frontend application utilises gRPC-web for communication.
 
 ## Resource Service
 
-For our resource service we will define a service `CalcService` with a `ResourceMethodSumCalculation` method, which takes in a request `SumRequest` and returns 
-a response `SumResponse`. The `SumRequest` will have two arguments of which the `ResourceMethodSumCalculation` will calculate the sum 
+For our resource service we will define a service `CalcService` with a `ResourceMethodSumCalculation` method, which takes in a request `SumRequest` and returns
+a response `SumResponse`. The `SumRequest` will have two arguments of which the `ResourceMethodSumCalculation` will calculate the sum
 and return the answer in the `SumResponse`.
 
-First we create a new proto through the Alis Build CLI. From your terminal, run the `alis proto create` 
+First we create a new proto through the Alis Build CLI. From your terminal, run the `alis proto create`
 command with your organisation and product's name. This guide uses the `play` organisation and the `me` product.
 
 ```bash
 alis proto create alis.play.me.services-calculate-v1
 ```
 
-This will create a new proto with a set of terraform files to specify the cloud infrastructure used to make the service available. The proto definition for our `ResourceMethodSumCalculation` with 
+This will create a new proto with a set of terraform files to specify the cloud infrastructure used to make the service available. The proto definition for our `ResourceMethodSumCalculation` with
 the corresponding `SumRequest` and `Sumresponse` are:
 
 ```protobuf
@@ -78,7 +83,7 @@ message SumResponse {
 
 ```
 We release the newly defined resource service through the Alis Build CLI to generate the necessary protobufs required to
-implement and consume the service. 
+implement and consume the service.
 
 ```bash
 alis proto release alis.play.services-calculate-v1
@@ -109,10 +114,10 @@ type myService struct {
 
 // ResourceMethodSumCalculation method is the implementation of the ResourceMethodSumCalculation method in the CalcService service.
 func (s *myService) ResourceMethodSumCalculation(ctx context.Context, req *pb.SumRequest) (*pb.SumResponse, error) {
-	
+
 	// Calculate the sum of the two argument values in the request
 	sum := req.ValueOne + req.ValueTwo
-    
+
 	// Initialise the response with the calculated sum
 	res := &pb.SumResponse{Sum: sum}
 
@@ -128,8 +133,8 @@ With the service implemented all that is left to do is to release and deploy the
 alis neuron release alis.play.services-calculate-v1
 ```
 
-When deploying the service a set of environmental variables are defined, which are used in the management of the 
-underlying cloud infrastructure. In the neuron's `cloudrun.tf` file found in the organisations proto repo, 
+When deploying the service a set of environmental variables are defined, which are used in the management of the
+underlying cloud infrastructure. In the neuron's `cloudrun.tf` file found in the organisations proto repo,
 specify a new `env` in the `containers` specifications.
 
 ```terraform
@@ -157,9 +162,9 @@ alis neuron deploy alis.play.services-calculate-v1
 ```
 
 ::: info Setting the `ALIS_OS_HASH` environment variable
-If this is the first time the neuron is deployed you will be promoted to create a new neuron deployment. 
+If this is the first time the neuron is deployed you will be promoted to create a new neuron deployment.
 Follow the steps outlined in the Alis Build CLI. When asked to create a new
-ENV, add the `ALIS_OS_HASH` as a new variable with `TBC` as the value, for the purposes of completing this guide. You can 
+ENV, add the `ALIS_OS_HASH` as a new variable with `TBC` as the value, for the purposes of completing this guide. You can
 re-deploy the neuron at a later stage through the CLI with the flag `-e` where you can reset the variable's value to the correct cloud run hash.
 :::
 
@@ -167,25 +172,25 @@ The resource service is now ready to be consumed.
 
 ## Console Service
 
-Designing and implementing a console service follows the same flow as designing and implementing a resource service. We 
+Designing and implementing a console service follows the same flow as designing and implementing a resource service. We
 create a new console proto for the `me` product in the `play` organisation with the following Alis Build CLI command:
 
 ```bash
 alis proto create alis.play.services-console-v1
 ```
 
-We define a service in the console proto called `CalculationService` with a `SumCalculation` method which takes a 
+We define a service in the console proto called `CalculationService` with a `SumCalculation` method which takes a
 `SumRequest` and `SumResponse`. We define the `SumRequest`
-and `SumResponse` to match the resource service's `SumRequest` and `SumResponse`. However, the purpose of a console 
-service is to gather the data from all the resource services, either a single resource service or multiple and collate the 
+and `SumResponse` to match the resource service's `SumRequest` and `SumResponse`. However, the purpose of a console
+service is to gather the data from all the resource services, either a single resource service or multiple and collate the
 data in the format the frontend requires. For this reason the console service is seen as the backend-for-frontend layer.
-The request and response of the console service can therefore have a custom definition. The completed `SumCalculation` 
+The request and response of the console service can therefore have a custom definition. The completed `SumCalculation`
 method definition would be:
 
 ```protobuf
 // Calculation service
 service CalculationService {
-  // Calculate the sum of two numbers with the consumption 
+  // Calculate the sum of two numbers with the consumption
   // of the CalcService resource service
   rpc SumCalculation (SumRequest) returns (SumResponse) {
     option (google.api.http) = {
@@ -214,33 +219,33 @@ message SumResponse {
 Running the following command publishes the necessary protobufs required to implement the
 service.
 
-```bash 
+```bash
 alis proto release alis.play.me.services-console-v1
 ```
 
-To implement the console service we require a console server, i.e a console neuron. As mentioned the console server is responsible 
+To implement the console service we require a console server, i.e a console neuron. As mentioned the console server is responsible
 for handling all communication to all resource servers as well as hosting the frontend application.
 
-With the help of the Alis Build CLI a console neuron can be pre-populated with boilerplate Vue 3 code. 
+With the help of the Alis Build CLI a console neuron can be pre-populated with boilerplate Vue 3 code.
 The application is pre-installed with [Vite](https://vitejs.dev/), [Typescript](https://www.typescriptlang.org/), [Vuetify 3](https://next.vuetifyjs.com/en/),
-[Pinia](https://pinia.vuejs.org/) (the official Vue  state management package) and [Vue Router](https://router.vuejs.org/). 
-The boilerplate application code could be generated when a new neuron is created or with the `alis gen code` command with 
+[Pinia](https://pinia.vuejs.org/) (the official Vue  state management package) and [Vue Router](https://router.vuejs.org/).
+The boilerplate application code could be generated when a new neuron is created or with the `alis gen code` command with
 the `--console` flag for an existing neuron.
 
-Create a new console neuron with: 
+Create a new console neuron with:
 
 ```bash
 alis neuron create alis.play.services-console-v1
 ```
 
 ::: info Generate boilerplate application code with new neuron creation
-When creating a new neuron, the Alis Build CLI will ask if boilerplate code should be generated. 
-Type `y` if desired, followed by selecting the `console` option. 
+When creating a new neuron, the Alis Build CLI will ask if boilerplate code should be generated.
+Type `y` if desired, followed by selecting the `console` option.
 For this guide we will use the `alis gen code` command with the `--console` flag in the following section.
 :::
 
-Consuming a resource service requires the console neuron to establish a new client connection to the resource server. 
-This is done in the `conn.go` and the `cliets.go` file in the `console/v1/internal` folder. The completed `clients.go` file for the 
+Consuming a resource service requires the console neuron to establish a new client connection to the resource server.
+This is done in the `conn.go` and the `cliets.go` file in the `console/v1/internal` folder. The completed `clients.go` file for the
 `Calculate` resource service client should look something like this.
 
 ```go
@@ -277,7 +282,7 @@ func init() {
 	}
 }
 ```
-The `Calculate` resource service client is now available, allowing us to implement the `SumCalculation` console method. In the `methods.go` 
+The `Calculate` resource service client is now available, allowing us to implement the `SumCalculation` console method. In the `methods.go`
 file create a method which makes a request to the `Calculate` resource service client's `ResourceMethodSumCalculation` method.
 
 ```go
@@ -299,12 +304,12 @@ type myService struct {
 
 // SumCalculation method is the implementation of the SumCalculation method in the CalculationService service.
 func (s *myService) SumCalculation(ctx context.Context, req *pb.SumRequest) (*pb.SumResponse, error) {
-	
+
 	CalcServiceReq := &pbPlay.req{
 		ValueOne: req.value_one,
 		ValueTwo: req.value_two,
     }
-    
+
 	// Make a request to the CalService in the Calculate resource client
 	sum, err := clients.Calculate.ResourceMethodSumCalculation(ctx, CalcServiceReq)
 	if err != nil {
@@ -323,8 +328,8 @@ The console service is now ready to consumed by the frontend application.
 
 ## Consuming services on the frontend
 
-With both the resource service and the console service implemented, we are now ready to consume the console service 
-in the frontend application. To add a boilerplate frontend application to your existing console neuron, run 
+With both the resource service and the console service implemented, we are now ready to consume the console service
+in the frontend application. To add a boilerplate frontend application to your existing console neuron, run
 the following gen code command in your terminal:
 
 ```bash
@@ -351,14 +356,14 @@ To locally authenticate the application to the organisation's artifact registry 
 npm run auth_alis_local
 ```
 
-After authentication and installing all required packages with `npm install`, start up a local server with `npm run dev`. 
+After authentication and installing all required packages with `npm install`, start up a local server with `npm run dev`.
 You can view your new console in the browser at `localhost:8080`.
 
 <div>
 <img src='./img/build-your-first-console-alis-console.png' style=''>
 </div>
 
-To consume a service from your frontend, a console service client is required. We define a global console service 
+To consume a service from your frontend, a console service client is required. We define a global console service
 client in the `index.ts` file in the `app/src/stores` folder.
 
 ```js
@@ -370,7 +375,7 @@ export default srv;
 ```
 
 ::: info Environmental variables in the frontend
-The environment variable for the `VITE_Base_URL` is set in a _.env_ file in the root directory of your application. We have two environments in this guide, `dev` and `prod`. 
+The environment variable for the `VITE_Base_URL` is set in a _.env_ file in the root directory of your application. We have two environments in this guide, `dev` and `prod`.
 For more details on environment variables in Vite, read the official [Vite documentation](https://vitejs.dev/guide/env-and-mode.html).
 The _.env_ files for the respective environments are:
 

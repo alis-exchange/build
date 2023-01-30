@@ -8,6 +8,11 @@ The Alis Build platform provides out-of-the-box documentation for products built
 
 In this guide, we aim to give you the necessary background to leverage this documentation service.
 
+:::warning
+All the CLI commands referenced on this page requires [Alis Build Enterprise](https://alisx.com/#:~:text=Enterprise), which gives the simple process
+of define, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
+:::
+
 ::: tip **Before you start**
 1. Download and install the [Alis CLI](/guides/getting-started/command-line-interface);
 2. Ensure you are part of an existing organisation and product on the platform;

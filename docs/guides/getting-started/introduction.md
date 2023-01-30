@@ -259,7 +259,7 @@ These can now be imported in your codebase to leverage the power of the definiti
 
 ## Want to see more?
 
-:::info Note
+:::warning
 The rest of the documentation is primarily geared towards [Alis Build Enterprise](https://alisx.com/#:~:text=Enterprise), which gives the simple process
 of define, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
 :::

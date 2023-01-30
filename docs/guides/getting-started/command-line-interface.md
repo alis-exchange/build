@@ -124,12 +124,21 @@ Once you have granted access, you will be redirected to a similar login page for
 to manage your repositories. Once you have logged in, follow the instructions in copying the relevant script into your terminal.
 :::
 
-### Try out alis_ CLI
+### Alis Build Login
+
+If you are registered as a Build Premium or Enterprise user, you can run the `alis login`
+command to login and enable additional functionality for the CLI.
 
 ```bash
 # Show help
 alis -h
 
-# list the products for your organisation
+# Get the Google common protos
+alis org get Google
+
+# List the products for your organisation.
+#
+# Once you your organisation has been registered,
+# you should be able to run this command.
 alis product list {yourOrg}
 ```
