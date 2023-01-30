@@ -75,7 +75,7 @@ Your final configuration should look similar to the image below.
 ![](img/configure-your-IDE-aip-linter-preferences.png)
 
 
-### Protocol Buffers Plugin
+#### Protocol Buffers Plugin
 
 Similar to the AIP Linter Plugin, the Protocol Buffers Plugin requires a specification of the directories where imported
 protos can be found. At this stage, we will simply add the Google protos.
@@ -88,6 +88,11 @@ While leaving the *JetBrains Protoeditor* directory path, add the path to the Go
 
 Your final configuration should look similar to the image below.
 ![](img/configure-your-IDE-protocol-buffer-preferences.png)
+
+::: danger **Troubleshooting**
+If your IDE gives issues recognising types despite setting up as required, ensure that you are pointing the
+`Descriptor path` to `google/protobuf/descripto.proto`.
+:::
 
 ## What's next?
 
