@@ -13,11 +13,13 @@ All the CLI commands referenced on this page requires [Alis Build Enterprise](ht
 of define, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
 :::
 
-::: tip **Before you start**
+## Prerequisites
+
+To get started with this guide, there are a few things you need to have done:
 1. Download and install the [Alis CLI](/guides/getting-started/command-line-interface);
 2. Ensure you are part of an existing organisation and product on the platform;
 3. Have pulled the latest version of your organisation's protos by running `alis org get {yourOrg}`.
-:::
+
 
 ## Overview
 

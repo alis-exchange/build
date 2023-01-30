@@ -259,12 +259,10 @@ These can now be imported in your codebase to leverage the power of the definiti
 
 ## Want to see more?
 
-:::warning
-The rest of the documentation is primarily geared towards [Alis Build Enterprise](https://alisx.com/#:~:text=Enterprise), which gives the simple process
-of define, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
-:::
-
 ### Design and implement digital services
+Check out our tutorial series on [setting up a gRPC server in Go locally](../how-to-guides/setting-up-gRPC-server.md).
+
+**Ready for the cloud?**
 The Alis Build platform gives you and your organisation software development superpowers. [Experience what we make possible](developer-flow.md).
 
 ### Consume digital services
