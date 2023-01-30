@@ -106,8 +106,8 @@ export default {
                     collapsed: true,
 					items: [
 						{
-							text: 'Make a request to a product',
-							link: '/guides/how-to-guides/make-your-first-request'
+							text: 'Setting up a gRPC server',
+							link: '/guides/how-to-guides/setting-up-grpc-server'
 						},
 						{
 							text: 'Build your first console',
