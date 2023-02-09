@@ -13,11 +13,18 @@ High-quality software needs to be scalable, readily accessible, secure, easy-to-
 The technologies and standards already exist to lower these barriers, but they are disjointed and require a lot of effort to consolidate and effectively leverage before the value is realised. We have done the work of thinking through these complex problems, identifying the best-in-class open-source technologies and standards, and brought these together for the users of the platform.
 
 Our aim is to democratise building software, enabling anyone to build their own innovation through the simple steps of
-_define, implement and consume_.
+_define, build and deploy_.
 
 ## Experience it yourself
 
-Experience the simplicity of _define, implement and consume_ that Alis Build enables by following
+::: tip **Take note: Simplification in progress** 🚀
+
+We are busy with exciting updates to simplify the developer flow, stripping out all the layers to focus on
+the three steps of **define**, **build** and **deploy**.
+
+:::
+
+Experience the simplicity of _define, build and deploy_ that Alis Build enables by following
 the example.
 
 This example is derived from the [gRPC quickstart documentation](https://grpc.io/docs/languages/go/quickstart/).
@@ -86,16 +93,16 @@ message HelloReply {
 }
 ```
 
-Now that everything is defined, we can implement the service.
+Now that everything is defined, we can build the service.
 
-## 2. Implement
+## 2. build
 
 Having a well-defined source of truth in the form of the proto file,
 allows for the auto-generation of language-specific type definitions and scaffolding
 for adding business logic, amongst other benefits. These features make it simple for
 developers to only focus on adding business logic.
 
-We will leverage these to implement the `Greeter` service by running the following command
+We will leverage these to build the `Greeter` service by running the following command
 and selecting one or more of auto-generated options provided.
 ```bash
 alis proto gen boilerplate
@@ -112,7 +119,7 @@ The flow should be similar to that depicted below, in which only `Go` was select
 This commands adds a set of `server` and `client` boilerplate files in the `helloworld` directory,
 under the selected languages that contains boilerplate code such as to only add the business logic.
 
-To implement the logic, open the desired language directory in your IDE and follow the steps below.
+To build the logic, open the desired language directory in your IDE and follow the steps below.
 
 <tabs>
 <tab name="Go">
@@ -159,7 +166,9 @@ greatly boosts developer productivity as:
 Both these factors contribute to enforcing good development practices and greatly improves
 developer and business productivity.
 
-## 3. Consume
+## 3. Deploy
+
+Once built, the logic can be deployed and consumed by clients.
 
 Similar to the server, Alis Build also auto-generates type definitions for the supported languages,
 making consumption of services feel native.
@@ -213,7 +222,7 @@ func main() {
 
 ## Test it out
 
-Now that we have _defined_ our service; _implemented_ the logic; and added code for the _consumption_, we can now
+Now that we have _defined_ our service; _built_ the logic; and added code for the _consumption_, we can now
 spin up the server and make a hit from the client to see this in action.
 
 <tabs>
@@ -259,7 +268,7 @@ These can now be imported in your codebase to leverage the power of the definiti
 
 ## Want to see more?
 
-### Design and implement digital services
+### Define and build digital services
 Check out our tutorial series on [setting up a gRPC server in Go locally](../how-to-guides/setting-up-gRPC-server.md).
 
 **Ready for the cloud?**

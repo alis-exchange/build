@@ -8,7 +8,7 @@ title: Core Concepts
 ::: tip **Take note: Simplification in progress** 🚀
 
 We are busy with exciting updates to simplify the concepts, stripping out all the layers to focus on
-the three steps of **Define**, **Build** and **deploy**.
+the three steps of **define**, **build** and **deploy**.
 
 :::
 

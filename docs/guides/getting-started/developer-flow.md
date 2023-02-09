@@ -9,7 +9,7 @@ next: "Build: Using Auto-generated Docs"
 ::: tip **Take note: Simplification in progress** 🚀
 
 We are busy with exciting updates to simplify the developer flow, stripping out all the layers to focus on
-the three steps of **Define**, **Build** and **deploy**.
+the three steps of **define**, **build** and **deploy**.
 
 :::
 
