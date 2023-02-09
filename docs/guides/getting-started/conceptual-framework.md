@@ -5,6 +5,13 @@ title: Core Concepts
 
 # Conceptual framework
 
+::: tip **Take note: Simplification in progress** 🚀
+
+We are busy with exciting updates to simplify the concepts, stripping out all the layers to focus on
+the three steps of **Define**, **Build** and **deploy**.
+
+:::
+
 The Alis Build platform leverages a collection of resources that follow the best practices of resource-oriented design.
 These resources are used to elegantly integrate the cloud technologies that make up the platform.
 
