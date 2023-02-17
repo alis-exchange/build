@@ -2,19 +2,19 @@
 title: Command Line Interface
 ---
 
-# Alis CLI Installation
+# Alis.Build CLI Installation
 
-The Alis command-line interface (CLI) is a powerful tool for managing resources on the Alis Build platform.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
+The Alis.Build command-line interface (CLI) is a powerful tool for managing resources on the Alis.Build platform.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
 
 **Build Lite**
-- Initialise new protos;
+- Define a new service;
 - Auto-generate language-specific types; and
 - Auto-generate server and client code.
 
-**Build Premium**
-- Create a new product;
-- Deploy new versions of your product;
-- Manage the build and deploy steps of your services; and
+**Build Enterprise**
+- Define a new service;
+- Build a service;
+- Deploy a service;
 - Auto-generate infrastructure and implementation code.
 
 ##  Installation
@@ -48,6 +48,17 @@ Not sure what your OS or ARCH is? Run `uname -a` to find out.
 | [Darwin Arm64 (M1)](https://files.cli.alis.services/darwin/arm64/latest/alis) | [Linux Arm64](https://files.cli.alis.services/linux/arm64/latest/alis) |
 | [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/amd64/latest/alis) |
 
+```bash
+# macOS
+curl https://files.cli.alis.services/darwin/arm/latest/alis --output $HOME/alis.exchange/cli/alis
+curl https://files.cli.alis.services/darwin/arm64/latest/alis --output $HOME/alis.exchange/cli/alis
+curl https://files.cli.alis.services/darwin/amd64/latest/alis --output $HOME/alis.exchange/cli/alis
+# Linux
+curl https://files.cli.alis.services/linux/arm/latest/alis --output $HOME/alis.exchange/cli/alis
+curl https://files.cli.alis.services/linux/arm64/latest/alis --output $HOME/alis.exchange/cli/alis
+curl https://files.cli.alis.services/linux/amd64/latest/alis --output $HOME/alis.exchange/cli/alis
+```
+  
 4. Place the file in your _alis.exchange/cli_ folder. Run the following command to give it execute permission:
 
 ```bash
