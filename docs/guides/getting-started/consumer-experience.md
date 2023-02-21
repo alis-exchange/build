@@ -162,4 +162,4 @@ We suggest creating your own function and incorporating a request to the `BooksC
 
 ## Next Steps
 
-**Ready to join Alis Build?** <a href="https://alis.exchange/signup" target="_blank">Get in touch</a>.
+**Ready to join Alis Build?** <a href="https://alisx.com/#contact" target="_blank">Get in touch</a>.
