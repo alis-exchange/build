@@ -77,11 +77,11 @@ world-class software.
 
 You will make use of the CLI to build your first API using Alis Build 🎉
 
-- [Conceptual Framework](conceptual-framework.md)
+- [Conceptual Framework](../references/conceptual-framework.md)
 
 Now that you have built an API, the question becomes how do we scale our build process across
 teams and still keep things simple. We have defined some core resources that allow us to structure
-what we build in a simple manner. [This guide](conceptual-framework.md) explores these core concepts.
+what we build in a simple manner. [This guide](../references/conceptual-framework.md) explores these core concepts.
 
 - [Developer Flow](developer-flow.md)
 

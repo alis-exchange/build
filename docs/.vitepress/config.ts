@@ -85,10 +85,6 @@ export default {
 							text: "Overview",
 							items: [
 								{
-									text: 'Conceptual framework',
-									link: '/guides/getting-started/conceptual-framework'
-								},
-								{
 									text: 'Developer flow',
 									link: '/guides/getting-started/developer-flow'
 								},
@@ -154,6 +150,10 @@ export default {
 					collapsible: true,
 					collapsed: true,
 					items: [
+						{
+							text: 'Conceptual framework',
+							link: '/guides/references/conceptual-framework'
+						},
 						{
 							text: 'Resource-oriented design',
 							link: '/guides/references/resource-oriented-design'

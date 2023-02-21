@@ -25,4 +25,4 @@ This tutorial assumes a conceptual understanding of both [protocol buffers](/gui
 
 Furthermore, to follow in your own development environment, ensure that you have:
 1. Installed and set up the [Alis CLI](../../getting-started/command-line-interface);
-2. Have an existing [product](/guides/getting-started/conceptual-framework.html#product) that you are able to build in.
+2. Have an existing [product](/references/conceptual-framework.html#product) that you are able to build in.

@@ -5,19 +5,21 @@ title: Core Concepts
 
 # Conceptual framework
 
-::: tip **Take note: Simplification in progress** 🚀
 
-We are busy with exciting updates to simplify the concepts, stripping out all the layers to focus on
-the three steps of **define**, **build** and **deploy**.
+When making use of the three easy steps of _define_, _build_ and _deploy_, Alis Build leverages
+a collection of resources to elegantly integrate the cloud technologies that make up the platform.
+These resources themselves were developed using the _define_, _build_ and _deploy_ steps.
 
-:::
+The primary resources that are used by Alis Build are:
+- Organisations;
+- Products;
+- Protocol Buffers;
+- Neurons; and
+- Deployments
 
-The Alis Build platform leverages a collection of resources that follow the best practices of resource-oriented design.
-These resources are used to elegantly integrate the cloud technologies that make up the platform.
+The relationships between these resources are depicted below, and explained in more detail in the following sections.
 
-The three major resources can be communicated together as an `organisation` having one or more `product`,
-consisting of one or more `protocol buffer`, which is implemented in a `neuron`. Additionally, `products` have `deployments`, which consists of all, or a subset, of the
-`neurons`.
+![](./img/conceptual-framework-resources.png)
 
 ## Organisation
 
@@ -140,15 +142,15 @@ A _deployment_ refers to an operational instance of a `product` on the cloud whi
 ### Product deployment
 
 A `product deployment` refers to the hardware infrastructure aspect of the product. As explained in the
-[product section](/guides/getting-started/conceptual-framework.html#product), the
+[product section](/references/conceptual-framework.html#product), the
 organisation's `proto` repository contains a directory for each product, in which the infrastructure requirements used
 within the neurons are specified.
 
-Before _deploying_ a `product`, it first needs to be _released_ (see `alis product release -h`), which increments the
+Before _deploying_ a `product`, it first needs to be _built_ (see `alis build {org}.{product}`), which increments the
 semantic versioning and applies the **product level** (i.e. not those within the `neurons`) Terraform specification
 within the `product` Google Cloud project.
 
-When a `product` is _deployed_ (see `alis product deploy -h`), the **product level** (i.e. not those within the `neurons`)
+When a `product` is _deployed_ (see `alis deploy {org}.{product}`), the **product level** (i.e. not those within the `neurons`)
 Terraform files are used to apply the infrastructure specification, the end `product` being the deployment environment
 reflecting the specification in the `*.tf` files. Once deployed, each `product deployment` has its own _Google Cloud
 project_.
@@ -158,20 +160,19 @@ project_.
 A `neuron deployment` refers to a specific version of a `neuron` that is operational within a specific `product deployment`,
 thereby being a _child resource_ of a `product deployment`.
 
-Before _deploying_ a `neuron`, it first needs to be _released_ (see `alis neuron release -h`). During the build process,
+Before _deploying_ a `neuron`, it first needs to be _built_ (see `alis build {org}.{product}.{neuron}`). During the build process,
 the semantic versioning is incremented and deployment package is created from the source code and the Terraform specification:
 1. The hash of the latest commit is captured such as to have a snapshot of the Terraform specification at the
    point in time the `build` was called.
 2. The Dockerfile(s) in the `neuron` repo is executed on _[Cloud Build](https://cloud.google.com/build)_ to build the
    images from the `neuron` source code, which is stored in the _[Artifact Registry](https://cloud.google.com/artifact-registry)_.
 
-When the `neuron` is _deployed_ to a specific `product deployment` (see `alis neuron deploy -h`), the `neuron` level
+When the `neuron` is _deployed_ to a specific `product deployment` (see `alis deploy {org}.{product}.{neuron}`), the `neuron` level
 Terraform specification is applied in the _Google Cloud project_ of the respective `product deployment`. This
 specification will typically contain services which point to the image in the artifact registry that was built when
-running `alis neuron build ...`.
+running `alis build {org}.{product}.{neuron}`.
 
-A `product deployment` may consist of all the `neurons` within a `product` or a subset thereof. Common patterns
-have emerged from builders on the Alis Build platform which are discussed in the following section.
+A `product deployment` may consist of all the `neurons` within a `product` or a subset thereof.
 
 [//]: # (## Common deployment patterns)
 

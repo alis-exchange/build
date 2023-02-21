@@ -16,7 +16,7 @@ of define, implement and consume superpowers by providing a complete cloud devel
 To get started with this guide, there are a few things you need to have done as an Alis Builder:
 
 1. Ensure you have installed and set up the [Alis CLI](../getting-started/command-line-interface.md)
-2. Ensure you have [created a product on the Alis Build platform](../getting-started/conceptual-framework.md)
+2. Ensure you have [created a product on the Alis Build platform](../references/conceptual-framework.md)
 3. Ensure you have been added to the relevant organisation's developers group. Request to be added by the owner of the
 organisation.
 
