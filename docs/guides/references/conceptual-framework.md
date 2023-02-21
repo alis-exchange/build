@@ -142,7 +142,7 @@ A _deployment_ refers to an operational instance of a `product` on the cloud whi
 ### Product deployment
 
 A `product deployment` refers to the hardware infrastructure aspect of the product. As explained in the
-[product section](/references/conceptual-framework.html#product), the
+[product section](/guides/references/conceptual-framework.html#product), the
 organisation's `proto` repository contains a directory for each product, in which the infrastructure requirements used
 within the neurons are specified.
 
