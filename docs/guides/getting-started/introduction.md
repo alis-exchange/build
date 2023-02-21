@@ -6,14 +6,13 @@ title: Alis Build Quickstart
 
 >**_"Our job as builders is to create the world as it could be."_** - <a href="https://farmerandfarmer.org/mastery/builder.html" target="_blank">Sep Kamvar</a>
 
-The Alis Build platform enables individuals and organisations to transform ideas into scalable, enterprise-grade digital services.
+The Alis Build platform enables individuals and teams to build their own digital innovations.
 
 High-quality software needs to be scalable, readily accessible, secure, easy-to-use and interoperable with other digital services. The costs and expertise associated with these requirements are exacting, particularly at scale, which present high barriers to entry for individuals and organisations.
 
 The technologies and standards already exist to lower these barriers, but they are disjointed and require a lot of effort to consolidate and effectively leverage before the value is realised. We have done the work of thinking through these complex problems, identifying the best-in-class open-source technologies and standards, and brought these together for the users of the platform.
 
-Our aim is to democratise building software, enabling anyone to build their own innovation through the simple steps of
-_define, build and deploy_.
+Our aim is to make it accessible for you to build your own innovation by following the three easy steps: _define, build and deploy_.
 
 ## Experience it yourself
 
@@ -24,7 +23,7 @@ the three steps of **define**, **build** and **deploy**.
 
 :::
 
-Experience the simplicity of _define, build and deploy_ that Alis Build enables by following
+Experience the simplicity of _define_, _build_ and _deploy_ that Alis Build enables by following
 the example.
 
 This example is derived from the [gRPC quickstart documentation](https://grpc.io/docs/languages/go/quickstart/).
@@ -32,7 +31,8 @@ This example is derived from the [gRPC quickstart documentation](https://grpc.io
 ### Before you start
 
 1. Ensure that you have installed the [Alis CLI](command-line-interface.md)
-2. From your terminal, create a new directory and navigate to it
+2. Ensure that you have [installed Go](https://go.dev/doc/install)
+3. From your terminal, create a new directory and navigate to it
 
 <tabs>
 <tab name="MacOS/Linux">
@@ -53,12 +53,13 @@ cd helloworld
 
 ## 1. Define
 
-In the _define_ step, we use [Protocol Buffers](../references/resource-oriented-design.md#protocol-buffers) to
-define all resources and services that we use.
+Defining things properly is the cornerstone of what we build. We make use of
+[Protocol Buffers](../references/core-technologies.md#protocol-buffers) to define everything that we do (`services` and `methods`)
+and interact with (_data structures_ specified as `messages`).
 
 From your terminal, run the command:
 ```bash
-alis proto init helloworld.v1
+alis define helloworld.v1
 ```
 
 The response should be similar to that shown below.
@@ -93,9 +94,9 @@ message HelloReply {
 }
 ```
 
-Now that everything is defined, we can build the service.
+Now that everything is defined, we can _build_ the service.
 
-## 2. build
+## 2. Build
 
 Having a well-defined source of truth in the form of the proto file,
 allows for the auto-generation of language-specific type definitions and scaffolding
@@ -103,9 +104,10 @@ for adding business logic, amongst other benefits. These features make it simple
 developers to only focus on adding business logic.
 
 We will leverage these to build the `Greeter` service by running the following command
-and selecting one or more of auto-generated options provided.
+and selecting one or more of the auto-generated options provided.
+
 ```bash
-alis proto gen boilerplate
+alis build
 ```
 
 :::warning
@@ -168,7 +170,7 @@ developer and business productivity.
 
 ## 3. Deploy
 
-Once built, the logic can be deployed and consumed by clients.
+Once built, the logic can be deployed and consumed by clients in the way that they want.
 
 Similar to the server, Alis Build also auto-generates type definitions for the supported languages,
 making consumption of services feel native.
@@ -222,7 +224,7 @@ func main() {
 
 ## Test it out
 
-Now that we have _defined_ our service; _built_ the logic; and added code for the _consumption_, we can now
+Now that we have _defined_ our service; _built_ the logic; and added code to demonstrate the consumption experience on _deploy_, we can now
 spin up the server and make a hit from the client to see this in action.
 
 <tabs>
@@ -231,47 +233,69 @@ spin up the server and make a hit from the client to see this in action.
 ### Start the server
 
 1. Open the terminal in the `helloworld/go/server` directory
-2. Run the command `go run *.go`, which should give a response similar to that below.
+2. Run the command `go run main.go`, which should give a response similar to that below.
 
 ![](img/introduction-test-server.gif)
 
 ### Consume the service
 
 1. Open the terminal in the `helloworld/go/client` directory
-2. Run the command `go run *.go`, which should give a response similar to that below.
+2. Run the command `go run main.go`, which should give a response similar to that below.
 
 ![](img/introduction-test-client.gif)
 
 </tab>
 </tabs>
 
-## Support for additional languages
 
-We are constantly working on expanding the auto-generated functionality such as demonstrated above.
+[//]: # (TODO: Add back once CLI is updated to reflect other languages)
+[//]: # (## Support for additional languages)
 
-While we may not have full code boilerplate generation support for all available languages, you are still able
-to generate type definitions for a wider range of languages.
+[//]: # ()
+[//]: # (We are constantly working on expanding the auto-generated functionality such as demonstrated above.)
 
-### Test it out
+[//]: # ()
+[//]: # (While we may not have full code boilerplate generation support for all available languages, you are still able)
 
-In your terminal, run the following command to generate the types:
+[//]: # (to generate type definitions for a wider range of languages.)
 
-```bash
-alis proto gen types
-```
+[//]: # ()
+[//]: # (### Test it out)
 
-The flow should be similar to that below.
+[//]: # ()
+[//]: # (In the directory containing a `.proto` file, run the following command to generate the types:)
 
-![](img/introduction-proto-gen-types.gif)
+[//]: # ()
+[//]: # (```bash)
 
-These can now be imported in your codebase to leverage the power of the definition-first approach.
+[//]: # (alis define)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (::: hint)
+
+[//]: # (The `define` command generates a new `.proto` file if none are found in the working directory.)
+
+[//]: # (If a `.proto` file does exist, the command will use it to generate types.)
+
+[//]: # (:::)
+
+[//]: # ()
+[//]: # (The flow should be similar to that below.)
+
+[//]: # ()
+[//]: # (![]&#40;img/introduction-proto-gen-types.gif&#41;)
+
+[//]: # ()
+[//]: # (These can now be imported in your codebase to leverage the power of the definition-first approach.)
 
 ## Want to see more?
 
 ### Define and build digital services
 Check out our tutorial series on [setting up a gRPC server in Go locally](../how-to-guides/setting-up-gRPC-server.md).
 
-**Ready for the cloud?**
+**Ready for the cloud?**<br>
 The Alis Build platform gives you and your organisation software development superpowers. [Experience what we make possible](developer-flow.md).
 
 ### Consume digital services
@@ -281,4 +305,4 @@ We aim to ensure that how software across the platform operates, communicates an
 Already joined Alis Build? Follow the guides to set up your local environment, starting off with our [command line interface](command-line-interface.md).
 
 #### Get in touch
-Have any further questions? Or want to schedule a demo? <a href="https://alis.exchange/signup" target="_blank">Get in touch</a>.
+Have any further questions? Or want to schedule a demo? <a href="https://alisx.com/#contact" target="_blank">Get in touch</a>.

@@ -33,7 +33,7 @@ of define, implement and consume superpowers by providing a complete cloud devel
 ## Define: Run the `alis define` command (initial)
 
 Defining things properly is the cornerstone of what we build on the platform. We make use of
-[Protocol Buffers](../references/core-technologies.md) to define everything that we do (`services` and `methods`)
+[Protocol Buffers](../references/core-technologies.md#protocol-buffers) to define everything that we do (`services` and `methods`)
 and interact with (_data structures_ specified as `messages`).
 
 #### 👨‍💻 User actions

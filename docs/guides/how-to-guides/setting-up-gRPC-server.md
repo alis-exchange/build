@@ -2,6 +2,16 @@
 title: Setting up a gRPC server locally
 ---
 
+## Experience it yourself
+
+::: tip **Take note: Simplification in progress** 🚀
+
+We are busy with exciting updates to simplify the developer flow, stripping out all the layers to focus on
+the three steps of **define**, **build** and **deploy**.
+
+:::
+
+
 # Setting up a gRPC server locally
 
 We have put together a video series on setting up a gRPC server in Go. Check out the playlist that provides a conceptual
