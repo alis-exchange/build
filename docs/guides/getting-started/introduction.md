@@ -51,7 +51,7 @@ cd helloworld
 </tab>
 </tabs>
 
-## 1. Define
+## Step 1. Define
 
 Defining things properly is the cornerstone of what we build. We make use of
 [Protocol Buffers](../references/core-technologies.md#protocol-buffers) to define everything that we do (`services` and `methods`)
@@ -96,7 +96,7 @@ message HelloReply {
 
 Now that everything is defined, we can _build_ the service.
 
-## 2. Build
+## Step 2. Build
 
 Having a well-defined source of truth in the form of the proto file,
 allows for the auto-generation of language-specific type definitions and scaffolding
@@ -168,7 +168,7 @@ greatly boosts developer productivity as:
 Both these factors contribute to enforcing good development practices and greatly improves
 developer and business productivity.
 
-## 3. Deploy
+## Step 3. Deploy
 
 Once built, the logic can be deployed and consumed by clients in the way that they want.
 
