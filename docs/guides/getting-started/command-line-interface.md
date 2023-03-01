@@ -145,11 +145,8 @@ command to login and enable additional functionality for the CLI.
 alis -h
 
 # Get the Google common protos
-alis org get Google
+alis get google
 
-# List the products for your organisation.
-#
-# Once you your organisation has been registered,
-# you should be able to run this command.
-alis product list {yourOrg}
+# Get your organisation definitions
+alis get {yourOrg}
 ```
