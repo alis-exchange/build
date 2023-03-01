@@ -108,7 +108,7 @@ Not sure what your OS or ARCH is? Run `set PROCESSOR` to find out.
 | [Windows Arm64](https://files.cli.alis.services/windows/arm64/latest/alis.exe) |
 | [Windows Amd64](https://files.cli.alis.services/windows/amd64/latest/alis.exe) |
 
-5. Place the file in your _alis.exchange/cli_ folder. Ensure the file name and extension is `alis.exe`.
+5. Place the file in your _alis.exchange/cli_ folder. Ensure the file name is `alis` and that the extension is `.exe`.
 
 6. Close and restart all currently open terminal windows, including IDEs, such that the configurations of the paths can take place.
 
