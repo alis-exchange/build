@@ -15,11 +15,8 @@ import{_ as r,o as c,c as u,e as a,w as n,a as i,r as t,b as e,d as l}from"./app
 alis <span class="token parameter variable">-h</span>
 
 <span class="token comment"># Get the Google common protos</span>
-alis org get Google
+alis get google
 
-<span class="token comment"># List the products for your organisation.</span>
-<span class="token comment">#</span>
-<span class="token comment"># Once you your organisation has been registered,</span>
-<span class="token comment"># you should be able to run this command.</span>
-alis product list <span class="token punctuation">{</span>yourOrg<span class="token punctuation">}</span>
+<span class="token comment"># Get your organisation definitions</span>
+alis get <span class="token punctuation">{</span>yourOrg<span class="token punctuation">}</span>
 </code></pre></div>`,5);function G(M,N,V,W,Y,F){const s=t("tab"),o=t("tabs");return c(),u("div",null,[p,a(o,null,{default:n(()=>[a(s,{name:"macOS/Linux"},{default:n(()=>[h,m,g,f,b,_,v,k,y,w,C,x,A,I]),_:1}),a(s,{name:"Windows"},{default:n(()=>[L,T,O,S,H,E,P,R,$,B]),_:1})]),_:1}),D])}const J=r(d,[["render",G]]);export{z as __pageData,J as default};
