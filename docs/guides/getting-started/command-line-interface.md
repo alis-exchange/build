@@ -36,23 +36,21 @@ echo 'export PATH=$PATH:~/alis.exchange/cli' >> ~/.zshrc
 
 3. Download the latest version of the CLI for your operating system (OS) and architecture (ARCH).
 
-::: tip
-Not sure what your OS or ARCH is? Run `uname -a` to find out.
-:::
-
-### List of available CLI versions
-
-| macOS Architecture        | Download links  |
+| macOS Architecture | Download links  |
 | ------ | -----|
 | Darwin Arm64 (M1) | [download](https://files.cli.alis.services/darwin/arm64/latest/alis) |
 | Darwin Amd64 | [download](https://files.cli.alis.services/darwin/amd64/latest/alis) |
   
-| Linux Architecture        | Download links  |
+| Linux Architecture | Download links  |
 | ------ | -----|
 |  Linux Arm | [download](https://files.cli.alis.services/linux/arm/latest/alis) |
 | Linux Arm64 | [download](https://files.cli.alis.services/linux/arm64/latest/alis) |
 | Linux Amd64 | [download](https://files.cli.alis.services/linux/amd64/latest/alis) |
 
+::: tip
+Not sure what your Architecture is? Run `uname -a` to find out.
+:::
+  
 ```bash
 # macOS
 curl https://files.cli.alis.services/darwin/arm/latest/alis --output $HOME/alis.exchange/cli/alis
@@ -85,9 +83,7 @@ You have successfully installed the **alis.exchange** CLI!
 
 1. Open your Windows Command Prompt (i.e. your terminal) as administrator.
   ::: tip
-  Press the Windows Start button at the bottom left.
-  Type in "Command Prompt".
-  Right click on Command Prompt and click "Run as administrator".
+  Press the Windows Start button at the bottom left; type in "Command Prompt"; and right click on Command Prompt and click "Run as administrator".
   :::
 2. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
 
@@ -106,8 +102,6 @@ setx PATH "%PATH%;%HOMEPATH%\alis.exchange\cli" /m
 ```
 
 4. Download the latest version of the CLI for your operating system (OS) and architecture (ARCH).
-
-### List of available CLI versions
 
 | Windows Architecture | Download links |
 | ------- | -----|
