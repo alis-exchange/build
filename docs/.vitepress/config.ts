@@ -103,7 +103,7 @@ export default {
 					items: [
 						{
 							text: 'Setting up a gRPC server',
-							link: '/guides/how-to-guides/setting-up-grpc-server'
+							link: '/guides/how-to-guides/setting-up-gRPC-server'
 						},
 						{
 							text: 'Build your first console',
