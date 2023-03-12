@@ -31,7 +31,11 @@ mkdir -p ~/alis.exchange/cli
 2. Add this folder to your `$PATH`:
 
 ```bash
+// macOS
 echo 'export PATH=$PATH:~/alis.exchange/cli' >> ~/.zshrc
+// Linux
+echo 'export PATH=$PATH:~/alis.exchange/cli' >> ~/.bashrc
+
 ```
 
 3. Download the latest version of the CLI for your operating system (OS) and architecture (ARCH).
