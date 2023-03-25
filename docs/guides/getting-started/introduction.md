@@ -8,20 +8,13 @@ title: Alis Build Quickstart
 
 The Alis Build platform enables individuals and teams to build their own digital innovations.
 
-High-quality software needs to be scalable, readily accessible, secure, easy-to-use and interoperable with other digital services. The costs and expertise associated with these requirements are exacting, particularly at scale, which present high barriers to entry for individuals and organisations.
+Developing high-quality software requires meeting several demanding requirements such as scalability, accessibility, security, usability, and interoperability with other digital services. However, these requirements entail significant costs and expertise, particularly at a larger scale, which can create daunting barriers to entry for both individuals and organizations.
 
-The technologies and standards already exist to lower these barriers, but they are disjointed and require a lot of effort to consolidate and effectively leverage before the value is realised. We have done the work of thinking through these complex problems, identifying the best-in-class open-source technologies and standards, and brought these together for the users of the platform.
+While there are existing technologies and standards that could reduce these barriers, they are currently disjointed and require considerable effort to consolidate and effectively leverage before their benefits can be realized. To address this issue, we have carefully analyzed these complex problems and identified the best open-source technologies and standards. By integrating these resources, we aim to make it easier for users to build innovative solutions by following three simple steps: define, build, and deploy.
 
 Our aim is to make it accessible for you to build your own innovation by following the three easy steps: _define, build and deploy_.
 
 ## Experience it yourself
-
-::: tip **Take note: Simplification in progress** 🚀
-
-We are busy with exciting updates to simplify the developer flow, stripping out all the layers to focus on
-the three steps of **define**, **build** and **deploy**.
-
-:::
 
 Experience the simplicity of _define_, _build_ and _deploy_ that Alis Build enables by following
 the example.
