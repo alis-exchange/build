@@ -4,18 +4,21 @@ title: Command Line Interface
 
 # Alis.Build CLI Installation
 
-The Alis.Build command-line interface (CLI) is a powerful tool for managing resources on the Alis.Build platform.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
+Experience the thrill of seamless collaboration with Alis Build's command line interface - the ultimate tool for 
+simplifying the building and deployment of your innovative solutions! Get ready to embark on an exciting journey with 
+just 3 simple steps:
 
-**Build Lite**
-- Define a new service;
-- Auto-generate language-specific types; and
-- Auto-generate server and client code.
+### Step 1: Define
+Unleash your creativity and articulate your vision with ease, while our expert guidance ensures consistency across your
+entire organization.
 
-**Build Enterprise**
-- Define a new service;
-- Build a service;
-- Deploy a service;
-- Auto-generate infrastructure and implementation code.
+### Step 2: Build
+Bring your business logic to life in any language you desire, as we handle all the heavy lifting with our support for 
+scaffolding, infrastructure, security, scaling, distribution, and much more!
+
+### Step 3: Deploy
+Get your solutions in the hands of your audience in no time, with support for multiple languages to ensure that 
+everyone can interact with your solution in the way they prefer. Are you ready to take your ideas to the next level?
 
 ##  Installation
 
