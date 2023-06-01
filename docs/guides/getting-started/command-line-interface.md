@@ -25,19 +25,19 @@ everyone can interact with your solution in the way they prefer. Are you ready t
 <tabs>
 <tab name="macOS/Linux">
 
-1. Run the following command to create an _alis.exchange_ folder in your home directory with a sub-folder _cli_.
+1. Run the following command to create an _alis.build_ folder in your home directory with a sub-folder _cli_.
 
 ```bash
-mkdir -p ~/alis.exchange/cli
+mkdir -p ~/alis.build/cli
 ```
 
 2. Add this folder to your `$PATH`:
 
 ```bash
 // macOS
-echo 'export PATH=$PATH:~/alis.exchange/cli' >> ~/.zshrc
+echo 'export PATH=$PATH:~/alis.build/cli' >> ~/.zshrc
 // Linux
-echo 'export PATH=$PATH:~/alis.exchange/cli' >> ~/.bashrc
+echo 'export PATH=$PATH:~/alis.build/cli' >> ~/.bashrc
 
 ```
 
@@ -60,20 +60,20 @@ Not sure what your Architecture is? Run `uname -a` to find out.
   
 ```bash
 # macOS
-curl https://files.cli.alis.services/darwin/arm/latest/alis --output $HOME/alis.exchange/cli/alis
-curl https://files.cli.alis.services/darwin/arm64/latest/alis --output $HOME/alis.exchange/cli/alis
-curl https://files.cli.alis.services/darwin/amd64/latest/alis --output $HOME/alis.exchange/cli/alis
+curl https://files.cli.alis.services/darwin/arm/latest/alis --output $HOME/alis.build/cli/alis
+curl https://files.cli.alis.services/darwin/arm64/latest/alis --output $HOME/alis.build/cli/alis
+curl https://files.cli.alis.services/darwin/amd64/latest/alis --output $HOME/alis.build/cli/alis
 
 # Linux
-curl https://files.cli.alis.services/linux/arm/latest/alis --output $HOME/alis.exchange/cli/alis
-curl https://files.cli.alis.services/linux/arm64/latest/alis --output $HOME/alis.exchange/cli/alis
-curl https://files.cli.alis.services/linux/amd64/latest/alis --output $HOME/alis.exchange/cli/alis
+curl https://files.cli.alis.services/linux/arm/latest/alis --output $HOME/alis.build/cli/alis
+curl https://files.cli.alis.services/linux/arm64/latest/alis --output $HOME/alis.build/cli/alis
+curl https://files.cli.alis.services/linux/amd64/latest/alis --output $HOME/alis.build/cli/alis
 ```
   
-4. Place the file in your _alis.exchange/cli_ folder. Run the following command to give it execute permission:
+4. Place the file in your _alis.build/cli_ folder. Run the following command to give it execute permission:
 
 ```bash
-chmod a+x $HOME/alis.exchange/cli/alis
+chmod a+x $HOME/alis.build/cli/alis
 ```
 
 5. Close and restart all currently open terminal windows, including IDEs, such that the configurations of the paths can take place.
@@ -84,7 +84,7 @@ For macOS, open the CLI by right-clicking on the file and open. This will prompt
 Select open. This will allow macOS permission to always run the CLI, and therefore you only have to do it with your initial installation.
 :::
 
-You have successfully installed the **alis.exchange** CLI!
+You have successfully installed the **alis.build** CLI!
 </tab>
 <tab name="Windows">
 
@@ -92,20 +92,20 @@ You have successfully installed the **alis.exchange** CLI!
   ::: tip
   Press the Windows Start button at the bottom left; type in "Command Prompt"; and right click on Command Prompt and click "Run as administrator".
   :::
-2. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
+2. Run the following command to create a folder in your home directory **alis.build** with a sub-folder _cli_.
 
 ```bash
-mkdir %HOMEPATH%\alis.exchange\cli
+mkdir %HOMEPATH%\alis.build\cli
 ```
 
 ::: warning
-If your `HOMEPATH` contains a space, you might need to manually create both a `alis.exchange` directory, as well as a `cli` directory therein.
+If your `HOMEPATH` contains a space, you might need to manually create both a `alis.build` directory, as well as a `cli` directory therein.
 :::
 
 3. Add this folder to your `$PATH`:
 
 ```bash
-setx PATH "%PATH%;%HOMEPATH%\alis.exchange\cli" /m
+setx PATH "%PATH%;%HOMEPATH%\alis.build\cli" /m
 ```
 
 4. Download the latest version of the CLI for your operating system (OS) and architecture (ARCH).
@@ -120,7 +120,7 @@ setx PATH "%PATH%;%HOMEPATH%\alis.exchange\cli" /m
 Not sure what your OS or ARCH is? Run `set PROCESSOR` to find out.
 :::
 
-5. Copy the downloaded `alis.exe` file to the `alis.exchange\cli` folder created in step 2.
+5. Copy the downloaded `alis.exe` file to the `alis.build\cli` folder created in step 2.
 
 6. Close and restart all currently open terminal windows, including IDEs, such that the configurations of the paths can take place.
 
