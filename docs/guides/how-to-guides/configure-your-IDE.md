@@ -61,7 +61,7 @@ The AIP linter plugin requires the installation of the executable file built by 
 go install github.com/googleapis/api-linter/cmd/api-linter@latest
 ```
 Once this is installed, you will need to point the plugin to this downloaded `api-linter.exe` file.
-In _Preferences/Tools/AIP Linter_ set the `api_linter_executable` to the downloaded executable. This should be in the
+In _Settings/Tools/AIP Linter_ set the `api_linter_executable` to the downloaded executable. This should be in the
 _/Users/{YourUsername}/go/bin_ directory.
 
 The `Import Paths` are used to find imported `*.proto` files. At this stage, we will simply add the Google protos.<br />
