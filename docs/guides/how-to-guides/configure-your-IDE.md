@@ -35,7 +35,7 @@ The aip linter plugin requires that there is either a `.api-linter.json` or `.ap
 
 1. Follow the relevant <a href="https://www.jetbrains.com/go/download/" target="_blank">installation instructions</a> for your device.
 > Start off using the trial version. Notify your organisation to purchase a license for your account if this was not yet provided.
-2. In the IDE, open the _Preferences_ and navigate to _Plugins_. In the marketplace, search for and install the latest versions of the following plugins:
+2. In the IDE, open the _Settings_ (⌘,) and navigate to _Plugins_. In the marketplace, search for and install the latest versions of the following plugins:
 
 <div>
     <img src='./img/configure-your-IDE-env-file.png' style='max-width: 180px'>
