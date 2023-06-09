@@ -68,7 +68,7 @@ The `Import Paths` are used to find imported `*.proto` files. At this stage, we 
 
 > ❗ Ensure that you have run the command `alis org get google` from your terminal to get the relevant protos downloaded locally.
 
-Unselect the option to `Configure automatically` and add the path to the Google proto directory, _/Users/{YourUsername}/alis.exchange/google/proto_,
+Unselect the option to `Configure automatically` and add the path to the Google proto directory, _/Users/{YourUsername}/alis.build/google/proto_,
 to the `Import Paths`.
 
 Your final configuration should look similar to the image below.
@@ -84,7 +84,7 @@ protos can be found. At this stage, we will simply add the Google protos.
 
 Select the *Configure Automatically* checkbox and *Apply*.
 
-While leaving the *JetBrains Protoeditor* directory path, add the path to the Google proto directory, _/Users/{YourUsername}/alis.exchange/google/proto_, to the `Import Paths`.
+While leaving the *JetBrains Protoeditor* directory path, add the path to the Google proto directory, _/Users/{YourUsername}/alis.build/google/proto_, to the `Import Paths`.
 
 Your final configuration should look similar to the image below.
 ![](img/configure-your-IDE-protocol-buffer-preferences.png)
