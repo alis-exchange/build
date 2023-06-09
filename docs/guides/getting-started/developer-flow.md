@@ -245,5 +245,5 @@ Leveraging the infrastructure specification as code (using Terraform) allows bui
 
 [//]: # (You can see the basic flow in the sample: [Effortlessly Deploy your Insurance Pricing model developed in Python at scale]&#40;https://samples.alis.build/samples/1666818220001&#41;.)
 
-We are advocates of learning by doing and are currently working on a comprehensive build example. In the meantime, [schedule a demo](https://alisx.com/#contact) by filling out the form, and we will take you through the process.
+We are advocates of learning by doing and are currently working on a comprehensive build example. In the meantime, [schedule a demo](/contact) by filling out the form, and we will take you through the process.
 

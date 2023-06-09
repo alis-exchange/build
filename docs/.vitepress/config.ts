@@ -50,6 +50,9 @@ export default {
             pattern: 'https://github.com/alis-exchange/build/edit/main/docs/:path',
             text: 'Edit this page on GitHub'
         },
+		nav: [
+			{ text: 'Schedule a call', link: '/contact' },
+		],
 		// nav: [
 		// 	{
 		// 		text: toTitleCase(ROOT_GUIDES),
@@ -109,10 +112,10 @@ export default {
 							text: 'Build your first console',
 							link: '/guides/how-to-guides/build-your-first-console'
 						},
-						{
-							text: 'Leverage auto-generated documentation',
-							link: '/guides/how-to-guides/auto-generated-docs'
-						},
+						// {
+						// 	text: 'Leverage auto-generated documentation',
+						// 	link: '/guides/how-to-guides/auto-generated-docs'
+						// },
 						{
 							text: 'Specify proto visibility scopes',
 							link: '/guides/how-to-guides/proto-visibility-scopes'

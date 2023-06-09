@@ -240,4 +240,4 @@ If you have any questions about this Privacy Policy, You can contact us:
 - By email: info@alisx.com
 
 
-- By visiting this page on our website: [https://alisx.com/#contact](https://alisx.com/#contact)
+- By visiting this page on our website: [/contact](/contact)
