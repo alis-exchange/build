@@ -45,7 +45,7 @@ All of an organisation’s definitions are stored centrally, which provides obse
 
 [//]: # (TODO: add something about the console?)
 
-### Build
+## Step 2. Build
 
 ![](https://storage.googleapis.com/media.v1.modules.resources.alis-un-dev-zma.un.alis.services/orientation/build.png)
 
@@ -57,7 +57,7 @@ Once you have implemented the logic in your language of choice, you will use the
 
 [//]: # (TODO: add something about the console?)
 
-### Deploy
+## Step 3. Deploy
 
 ![](https://storage.googleapis.com/media.v1.modules.resources.alis-un-dev-zma.un.alis.services/orientation/deploy.png)
 
