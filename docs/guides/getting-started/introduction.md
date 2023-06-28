@@ -26,7 +26,7 @@ Using the console and CLI, Alis Build kick-starts and accelerates software-drive
 
 # DBD Steps
 
-Our aim is to make is simple and accessible for you to build software that solves real-world problems by following the three easy steps:
+Our aim is to make it simple and accessible for you to build software that solves real-world problems by following the three easy steps:
 _define_, _build_ and _deploy_. These are introduced in the following sections.
 
 ## Step 1. Define
@@ -74,7 +74,7 @@ With the Terraform in place, you will simply run `alis deploy` to either deploy 
 
 When you create a deployment, you will be able to designate it as either a:
 
-- **Development environment** (`DEV`). which will allow you to test things out and play around; and a
+- **Development environment** (`DEV`). which will allow you to test things out and play around; or a
 - **Production environment** (`PROD`)  which will lock the configuration of the Cloud Environment and provide a stable version of your logic to be used.
 
 ## Start building

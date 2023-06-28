@@ -81,10 +81,10 @@ Below are some examples of answering these questions
    Various forecasts associated with physical assets. Therefore, `Forecast` service.
 2. **What operations are to be performed as part of this service?**<br>
    At this stage, we will only be forecasting depreciation on assets. Therefore, a `ForecastDepreciation` method.
-3. **What are the data structures required as part of the service?**<br> T
+3. **What are the data structures required as part of the service?**<br> 
    We are only concerned with the request and response messages for the method.<br><br> The request will require the initial cost of the asset, it's salvage value, the number of months over which it will be depreciated and the forecast period.<br>The response will simply contain the forecasted depreciation amount.
 4. **What are the potential relationships and hierarchy between the resources?**<br>
-   Not relevant<br>
+   Not relevant.<br>
 
 #### Resulting proto
 
@@ -155,7 +155,7 @@ Since the protos sit within a version control repo, multiple developers may coll
 ## Define: Run the `alis define` command
 
 Running the `alis define` command after a definition has been added communicates that the current state of the proto is the source of truth.
-In other words, it is what should be implemented on your side and what clients can expect to consume. There is a lot that also happens in the background which we will unpack in the following section.
+In other words, it is what should be implemented on your side and what clients can expect to consume. There is a lot that also happens in the background, which we will unpack in the following section.
 
 #### 👨‍💻 User actions
 Simply run the `alis define` command from the terminal.
@@ -187,7 +187,7 @@ The first time that the `alis build` command is run, in the background it will r
 
 ## Build: Implement business logic
 
-In the majority of cases, building requires some form of code implementation,
+In the majority of cases, building requires some form of code implementation.
 
 In this step, one effectively builds out the services to process the request, execute logic in the code and return a response.
 

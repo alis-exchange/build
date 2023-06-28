@@ -19,7 +19,7 @@ information from that which is public.
 In summary, these visibility tags allow one to RESTRICT visibility to certain aspects of the protos. These are available for:
 `Services`; `Methods`; `Messages`; `Fields`; `Enums`; and `EnumValues`.
 
-And follow a top-down restriction enforcement. This means that any child parts inherit the restriction of the parent. Ie If a restriction is provided to:
+And follow a top-down restriction enforcement. This means that any child parts inherit the restriction of the parent. I.e. If a restriction is provided to:
 - A `service` then all of the `methods` part of that `service` inherits the restriction;
 - A `message` then all of the `fields`, `enums` and `sub messages` in the message inherits the restriction.
 
