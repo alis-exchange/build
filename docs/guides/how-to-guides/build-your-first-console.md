@@ -162,7 +162,7 @@ alis neuron deploy alis.play.services-calculate-v1
 ```
 
 ::: info Setting the `ALIS_OS_HASH` environment variable
-If this is the first time the neuron is deployed you will be promoted to create a new neuron deployment.
+If this is the first time the neuron is deployed, you will be prompted to create a new neuron deployment.
 Follow the steps outlined in the Alis Build CLI. When asked to create a new
 ENV, add the `ALIS_OS_HASH` as a new variable with `TBC` as the value, for the purposes of completing this guide. You can
 re-deploy the neuron at a later stage through the CLI with the flag `-e` where you can reset the variable's value to the correct cloud run hash.
@@ -223,7 +223,7 @@ service.
 alis proto release alis.play.me.services-console-v1
 ```
 
-To implement the console service we require a console server, i.e a console neuron. As mentioned the console server is responsible
+To implement the console service we require a console server, i.e a console neuron. As mentioned, the console server is responsible
 for handling all communication to all resource servers as well as hosting the frontend application.
 
 With the help of the Alis Build CLI a console neuron can be pre-populated with boilerplate Vue 3 code.

@@ -10,7 +10,7 @@ just 3 simple steps:
 
 ### Step 1: Define
 Unleash your creativity and articulate your vision with ease, while our expert guidance ensures consistency across your
-entire organization.
+entire organisation.
 
 ### Step 2: Build
 Bring your business logic to life in any language you desire, as we handle all the heavy lifting with our support for 
