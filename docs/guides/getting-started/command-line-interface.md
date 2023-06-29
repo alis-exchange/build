@@ -131,7 +131,7 @@ You have successfully installed the Alis CLI!
 
 :::tip
 
-If you are a Build Premium or Enterprise user, you will need to ensure the following:
+You will need to ensure the following:
 
 1. **Ensure Git is installed**
 
@@ -139,24 +139,22 @@ Git may already be installed on your device. Check by running `git --version`. A
 
 If the command was not found, follow the [installation instructions](https://www.atlassian.com/git/tutorials/install-git).
 
-2. **Connect the CLI with Google Cloud and Google Cloud Source Repositories**
-
-From your terminal, run `alis login`. This will open your browser and require you to grant access to the Alis Exchange CLI to manage your Google Cloud.
-
-Once you have granted access, you will be redirected to a similar login page for Google Cloud Source Repositories. Granting access allows for the CLI
-to manage your repositories. Once you have logged in, follow the instructions in copying the relevant script into your terminal.
 :::
 
-### Alis Build Login
+## Login to Alis Build
 
-If you are registered as a Build Premium or Enterprise user, you can run the `alis login`
-command to login and enable additional functionality for the CLI.
+In order to communicate with the Alis Build platform you need to be logged in.
+
+Run the `alis login` command and follow the prompts to login.
 
 ```bash
 # Show help
 alis -h
 
 # Get the Google common protos
+# Google has a set of commonly used definitions (date, timestamp, etc. types)
+# which you could use in your definitions to simplify things.  To make this
+# available to your environment, we run the following command:
 alis get google
 
 # Get your organisation definitions
