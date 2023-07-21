@@ -104,22 +104,22 @@ export default {
                     collapsible: true,
                     collapsed: true,
 					items: [
-						{
-							text: 'Setting up a gRPC server',
-							link: '/guides/how-to-guides/setting-up-gRPC-server'
-						},
-						{
-							text: 'Build your first console',
-							link: '/guides/how-to-guides/build-your-first-console'
-						},
+						// {
+						// 	text: 'Setting up a gRPC server',
+						// 	link: '/guides/how-to-guides/setting-up-gRPC-server'
+						// },
+						// {
+						// 	text: 'Build your first console',
+						// 	link: '/guides/how-to-guides/build-your-first-console'
+						// },
 						// {
 						// 	text: 'Leverage auto-generated documentation',
 						// 	link: '/guides/how-to-guides/auto-generated-docs'
 						// },
-						{
-							text: 'Specify proto visibility scopes',
-							link: '/guides/how-to-guides/proto-visibility-scopes'
-						},
+						// {
+						// 	text: 'Specify proto visibility scopes',
+						// 	link: '/guides/how-to-guides/proto-visibility-scopes'
+						// },
 						{
 							text: 'Configure your IDE',
 							link: '/guides/how-to-guides/configure-your-IDE'
@@ -148,25 +148,25 @@ export default {
 						// }
 					]
 				},
-				{
-					text: 'Further Reading',
-					collapsible: true,
-					collapsed: true,
-					items: [
-						{
-							text: 'Conceptual framework',
-							link: '/guides/references/conceptual-framework'
-						},
-						{
-							text: 'Resource-oriented design',
-							link: '/guides/references/resource-oriented-design'
-						},
-						{
-							text: "Core technologies",
-							link: '/guides/references/core-technologies'
-						},
-					]
-				},
+				// {
+				// 	text: 'Further Reading',
+				// 	collapsible: true,
+				// 	collapsed: true,
+				// 	items: [
+				// 		{
+				// 			text: 'Conceptual framework',
+				// 			link: '/guides/references/conceptual-framework'
+				// 		},
+				// 		{
+				// 			text: 'Resource-oriented design',
+				// 			link: '/guides/references/resource-oriented-design'
+				// 		},
+				// 		{
+				// 			text: "Core technologies",
+				// 			link: '/guides/references/core-technologies'
+				// 		},
+				// 	]
+				// },
 			],
 			// '/references/':[
 			// 	{
