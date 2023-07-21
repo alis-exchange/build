@@ -5,6 +5,12 @@ title: Set up your favourite IDE
 
 # Configure your IDE
 
+:::tip **Cloud Workstations**
+All builders have access to our fully managed, on demand, development environment in the cloud. 
+
+No setup required, simply start building.
+:::
+
 To be a great developer you need great tools. In this guide we will walk you through setting up your choice of integrated development environment (IDE). This guide provides the steps to setting up either <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code (VS Code)</a> or <a href="https://www.jetbrains.com/go/" target="_blank">JetBrains GoLand</a>.
 
 ## Which IDE to choose?
@@ -12,6 +18,11 @@ To be a great developer you need great tools. In this guide we will walk you thr
 A few things to consider when choosing your IDE. VS Code and GoLand provides support for a wide range of languages including Go and therefore are the favourites amongst the **alis.exchange** community. VS Code being open source is completely free whereas GoLand has an annual license fee. Plugins have been built by the **alis.exchange** community for both IDEs, to create the best possible developer experience.
 
 ## Visual Studio Code
+
+:::tip **Coming soon: Alis Build Extension**
+We have been working on our own VS Code extension to further empower, support and simplify the process of building.
+This is currently available in our Cloud Workstations, and will be released during Q3 of 2023.
+:::
 
 1. Follow the relevant <a href="https://code.visualstudio.com/download" target="_blank">installation instructions</a> for your device.
 
