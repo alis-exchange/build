@@ -19,8 +19,8 @@ Google has two detailed resources that should be read to get a baseline understa
 - [AIP-121: Resource-oriented design](https://google.aip.dev/121)
 
 The latter resource is part of Google's API Improvement Proposal, which is _"a design document providing high-level,
-concise documentation for API development"_. These AIPs provide clear guidelines how to go about the design of resources
-on **alis.exchange** and may be of useful to spend some time in once you start building. Additionally, we have built IDE plugins
+concise documentation for API development"_. These AIPs provide clear guidelines on how to go about the design of resources
+on **alis.exchange** and may be useful to spend some time in once you start building. Additionally, we have built IDE plugins
 for these AIPs to help enforce best practices while you design.
 
 ## Protocol buffers
@@ -33,7 +33,7 @@ _protos_, as the interface definition language. This technology is core to all t
 > easily write and read your structured data to and from a variety of data streams and using a variety of languages."_ -
 > <a href="https://developers.google.com/protocol-buffers" target="_blank">Source</a>
 
-The protos becomes the golden source of truth of anything we do on the exchange. Having this, one can eliminate
+The protos become the golden source of truth of anything we do on the exchange. Having this, one can eliminate
 common developer toil by:
 - [Auto-generating documentation](/guides/how-to-guides/auto-generated-docs) for APIs;
 - Auto-generating source code for the majority of popular languages including Go, Java, Python and more;

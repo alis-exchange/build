@@ -4,291 +4,95 @@ title: Alis Build Quickstart
 
 # Welcome to the Alis Build platform
 
->**_"Our job as builders is to create the world as it could be."_** - <a href="https://farmerandfarmer.org/mastery/builder.html" target="_blank">Sep Kamvar</a>
+As builders, we use software to solve problems, to innovate, to do things in a better way. 
 
-The Alis Build platform enables individuals and teams to build their own digital innovations.
+> **Our mission is to make building software as easy and delightful as possible so that you can focus on the problem you are trying to solve**.
 
-Developing high-quality software requires meeting several demanding requirements such as scalability, accessibility, security, usability, and interoperability with other digital services. However, these requirements entail significant costs and expertise, particularly at a larger scale, which can create daunting barriers to entry for both individuals and organizations.
+The platform makes it easy to start building and easier to keep on doing it. It also provides a structure for organisations and teams. 
 
-While there are existing technologies and standards that could reduce these barriers, they are currently disjointed and require considerable effort to consolidate and effectively leverage before their benefits can be realized. To address this issue, we have carefully analyzed these complex problems and identified the best open-source technologies and standards. By integrating these resources, we aim to make it easier for users to build innovative solutions by following three simple steps: define, build, and deploy.
+The core building blocks that you will come across are shown in the table below. You will be exposed to them as you start building and will feel more familiar with it. <br>
 
-Our aim is to make it accessible for you to build your own innovation by following the three easy steps: _define, build and deploy_.
 
-## Experience it yourself
+| Building block     | Description                                                                                                                                                                                                                                  |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Organisation       | An organisation is a top-level resource on the platform. It is responsible for billing and managing users in the organisation along with access management.                                                                                  |
+| Product            | A product is a digital product built on the platform. The majority of these adopt an API-first strategy.                                                                                                                                     |
+| Protocol Buffer    | A protocol buffer is a resource that leverages the original Protocol Buffers design by Sanjay Ghemawat, Jeff Dean, and others. It is used to clearly define all the functionality and data structures of the services you want to build out. |
+| Microservice       | A modular piece of logic, written as code and executed in the cloud.                                                                                                                                                                         |
+| Alis Build Console | You will use the Console to manage resources, explore University modules and get started.                                                                                                                                                    |
+| Alis Build CLI     | You will use the CLI as part of your workflow within your development environment.                                                                                                                                                           |
 
-Experience the simplicity of _define_, _build_ and _deploy_ that Alis Build enables by following
-the example.
+Using the console and CLI, Alis Build kick-starts and accelerates software-driven innovation by providing an opinionated approach to building systems.
 
-This example is derived from the [gRPC quickstart documentation](https://grpc.io/docs/languages/go/quickstart/).
+# DBD Steps
 
-### Before you start
-
-1. Ensure that you have installed the [Alis CLI](command-line-interface.md)
-2. Ensure that you have [installed Go](https://go.dev/doc/install)
-3. From your terminal, create a new directory and navigate to it
-
-<tabs>
-<tab name="MacOS/Linux">
-
-```bash
-mkdir helloworld
-cd helloworld
-```
-</tab>
-<tab name="Windows">
-
-```bash
-mkdir helloworld
-cd helloworld
-```
-</tab>
-</tabs>
+Our aim is to make it simple and accessible for you to build software that solves real-world problems by following the three easy steps:
+_define_, _build_ and _deploy_. These are introduced in the following sections.
 
 ## Step 1. Define
 
-Defining things properly is the cornerstone of what we build. We make use of
-[Protocol Buffers](../references/core-technologies.md#protocol-buffers) to define everything that we do (`services` and `methods`)
-and interact with (_data structures_ specified as `messages`).
+![](https://storage.googleapis.com/media.v1.modules.resources.alis-un-dev-zma.un.alis.services/orientation/define.png)
 
-From your terminal, run the command:
-```bash
-alis define helloworld.v1
-```
+Your productivity as a Builder starts with writing the definitions associated with the problem you are trying to innovate against.
 
-The response should be similar to that shown below.
-![](img/introduction-proto-init.gif)
+For example, if you are Building a service to provide information on Books, on Alis Build you will start by writing a definition of a Book resource including the attributes of the Book that are important.
 
-The above command added a `service.proto` file in the `helloworld` directory. Edit this file to contain
-the content shown below.
+Or, if you are building a service to perform a complicated piece of business logic, such as pricing a derivative, on Alis Build you will start by writing the definitions of the request and response resources.
 
-```protobuf
-syntax = "proto3";
+Once you have defined what you care about, you will use the Alis CLI to run `alis define`, which will formally publish your definitions.
 
-package helloworld.v1;
+All of an organisation’s definitions are stored centrally, which provides observability across an organisation and allows for simpler communication and collaboration.
 
-option go_package = "google.golang.org/grpc/examples/helloworld/helloworld/v1";
-
-// The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
-}
-
-// The request message containing the user's name.
-message HelloRequest {
-  // The name of the user
-  string name = 1;
-}
-
-// The response message containing the greetings
-message HelloReply {
-  // The greeting message
-  string message = 1;
-}
-```
-
-Now that everything is defined, we can _build_ the service.
+[//]: # (TODO: add something about the console?)
 
 ## Step 2. Build
 
-Having a well-defined source of truth in the form of the proto file,
-allows for the auto-generation of language-specific type definitions and scaffolding
-for adding business logic, amongst other benefits. These features make it simple for
-developers to only focus on adding business logic.
+![](https://storage.googleapis.com/media.v1.modules.resources.alis-un-dev-zma.un.alis.services/orientation/build.png)
 
-We will leverage these to build the `Greeter` service by running the following command
-and selecting one or more of the auto-generated options provided.
+Alis Build uses the things you have defined in the previous step to accelerate implementing the code that you will need to write. This is achieved by providing the scaffolding you require to start, as well as auto-generated code based on your environment.
 
-```bash
-alis build
-```
+Whether you would prefer to develop in Golang, Python or Javascript, the experience of writing the code to implement your business logic will feel very similar.
 
-:::warning
-The above command requires you to be in a directory containing a single proto file,
-ie. the `helloworld` directory containing the `service.proto` file.
-:::
+Once you have implemented the logic in your language of choice, you will use the Alis CLI to run `alis build`. This facilitates packaging up your code such that it is ready to be deployed to the cloud and ready for people to use.
 
-The flow should be similar to that depicted below, in which only `Go` was selected.
-![](img/introduction-proto-gen.gif)
-
-This commands adds a set of `server` and `client` boilerplate files in the `helloworld` directory,
-under the selected languages that contains boilerplate code such as to only add the business logic.
-
-To build the logic, open the desired language directory in your IDE and follow the steps below.
-
-<tabs>
-<tab name="Go">
-
-1. Ensure that you have executed `go mod tidy` in the `server` directory
-
-2. Open the `server/methods.go` file and fill in the logic as follows:
-
-![](img/introduction-implementation-go.gif)
-
-:::details Complete file
-
-```go
-	package main
-
-	import (
-		"context"
-
-		pb "helloworld.v1/internal/protobufs"
-	)
-
-	type myGreeter struct {
-		pb.UnimplementedGreeterServer
-	}
-
-	func (s *myGreeter) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloReply, error) {
-		msg := "Hello, " + req.GetName()
-
-		return &pb.HelloReply{Message: msg}, nil
-	}
-
-```
-
-:::
-
-</tab>
-</tabs>
-
-Notice how the definitions from the `service.proto` file travels with the code. This
-greatly boosts developer productivity as:
-1. The _define_ step, which contains the documentation, is not an afterthought but is integral to the development process.
-2. These definitions are shipped with the code, providing developers with the types and documentation they require in their IDE.
-
-Both these factors contribute to enforcing good development practices and greatly improves
-developer and business productivity.
+[//]: # (TODO: add something about the console?)
 
 ## Step 3. Deploy
 
-Once built, the logic can be deployed and consumed by clients in the way that they want.
+![](https://storage.googleapis.com/media.v1.modules.resources.alis-un-dev-zma.un.alis.services/orientation/deploy.png)
 
-Similar to the server, Alis Build also auto-generates type definitions for the supported languages,
-making consumption of services feel native.
+Alis Build makes it delightfully easy to take your logic and deploy it to one or more Cloud environment.
 
-Add simple logic in your language of choice to consume the `greeter` service.
+_Deploying_ a service simply means that you:
 
-<tabs>
-<tab name="Go">
+- Configure Cloud hardware to run your business logic, and
+- Configure the necessary accompanying infrastructure needed by the service, such as databases, authentication or networking.
 
-1. Ensure that you have executed `go mod tidy` in the `client` directory
+Again, Alis Build provides all the scaffolding and tooling required for you to simply deploy! This is done by leveraging an open source technology, called [Terraform](https://www.terraform.io/use-cases/infrastructure-as-code), to make sure that your cloud deployments are properly configured.
 
-2. Open the `client/main.go` file and fill in the logic as follows:
+With the Terraform in place, you will simply run `alis deploy` to either deploy to an existing deployment or creating a new deployment.
 
-![](img/introduction-consumption-go.gif)
+When you create a deployment, you will be able to designate it as either a:
 
-:::details Complete file
+- **Development environment** (`DEV`). which will allow you to test things out and play around; or a
+- **Production environment** (`PROD`)  which will lock the configuration of the Cloud Environment and provide a stable version of your logic to be used.
 
-```go
-package main
+## Start building
 
-import (
-	"context"
-	"fmt"
-	"log"
+We understand that it may seem daunting to take on new technologies. We believe that, using Alis Build, we will make it simple and accessible for you to build digital solutions to any problem you face.
 
-	pb "client/internal/protobufs"
-	"google.golang.org/grpc"
-)
+To reemphasise, the concepts spoken about in this text will be reinforced as you go through the University and start building yourself.
 
-func main() {
-	conn, err := grpc.Dial("localhost:8080", grpc.WithInsecure())
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer conn.Close()
+We are excited to have you part of the builder community!
 
-	GreeterClient := pb.NewGreeterClient(conn)
-	resp, _ := GreeterClient.SayHello(context.Background(), &pb.HelloRequest{Name: "Bob"})
-
-	fmt.Println(resp.GetMessage())
-
-}
-
-```
-
+:::warning Take note
+Building software using Alis Build currently requires an enterprise account. To get started, <a href="/contact" target="_blank">get in touch</a> for a free consultation
 :::
-
-</tab>
-</tabs>
-
-
-## Test it out
-
-Now that we have _defined_ our service; _built_ the logic; and added code to demonstrate the consumption experience on _deploy_, we can now
-spin up the server and make a hit from the client to see this in action.
-
-<tabs>
-<tab name="Go">
-
-### Start the server
-
-1. Open the terminal in the `helloworld/go/server` directory
-2. Run the command `go run main.go`, which should give a response similar to that below.
-
-![](img/introduction-test-server.gif)
-
-### Consume the service
-
-1. Open the terminal in the `helloworld/go/client` directory
-2. Run the command `go run main.go`, which should give a response similar to that below.
-
-![](img/introduction-test-client.gif)
-
-</tab>
-</tabs>
-
-
-[//]: # (TODO: Add back once CLI is updated to reflect other languages)
-[//]: # (## Support for additional languages)
-
-[//]: # ()
-[//]: # (We are constantly working on expanding the auto-generated functionality such as demonstrated above.)
-
-[//]: # ()
-[//]: # (While we may not have full code boilerplate generation support for all available languages, you are still able)
-
-[//]: # (to generate type definitions for a wider range of languages.)
-
-[//]: # ()
-[//]: # (### Test it out)
-
-[//]: # ()
-[//]: # (In the directory containing a `.proto` file, run the following command to generate the types:)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (alis define)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (::: hint)
-
-[//]: # (The `define` command generates a new `.proto` file if none are found in the working directory.)
-
-[//]: # (If a `.proto` file does exist, the command will use it to generate types.)
-
-[//]: # (:::)
-
-[//]: # ()
-[//]: # (The flow should be similar to that below.)
-
-[//]: # ()
-[//]: # (![]&#40;img/introduction-proto-gen-types.gif&#41;)
-
-[//]: # ()
-[//]: # (These can now be imported in your codebase to leverage the power of the definition-first approach.)
 
 ## Want to see more?
 
 ### Define and build digital services
-Check out our tutorial series on [setting up a gRPC server in Go locally](../how-to-guides/setting-up-gRPC-server.md).
 
-**Ready for the cloud?**<br>
 The Alis Build platform gives you and your organisation software development superpowers. [Experience what we make possible](developer-flow.md).
 
 ### Consume digital services
@@ -297,5 +101,5 @@ We aim to ensure that how software across the platform operates, communicates an
 ### Configure your device
 Already joined Alis Build? Follow the guides to set up your local environment, starting off with our [command line interface](command-line-interface.md).
 
-#### Get in touch
-Have any further questions? Or want to schedule a demo? <a href="https://alisx.com/#contact" target="_blank">Get in touch</a>.
+## Get in touch
+Have any further questions? Or want to schedule a demo? <a href="/contact" target="_blank">Get in touch</a>.
