@@ -141,22 +141,12 @@ If the command was not found, follow the [installation instructions](https://www
 
 :::
 
-## Login to Alis Build
+## Get started with the CLI
 
-In order to communicate with the Alis Build platform you need to be logged in.
-
-Run the `alis login` command and follow the prompts to login.
+In your terminal, run the following command. 
 
 ```bash
-# Show help
-alis -h
-
-# Get the Google common protos
-# Google has a set of commonly used definitions (date, timestamp, etc. types)
-# which you could use in your definitions to simplify things.  To make this
-# available to your environment, we run the following command:
-alis get google
-
-# Get your organisation definitions
-alis get {yourOrg}
+alis init
 ```
+
+The `init` command will guide you through the process to get set up.
